@@ -1,0 +1,8 @@
+prefix=/home/xavier/pid/HD_Ros/devel
+
+Name: hd_ik_demo
+Description: Description of hd_ik_demo
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp moveit_ros_planning moveit_ros_planning_interface geometry_msgs moveit_core moveit_visual_tools interactive_markers tf2_geometry_msgs

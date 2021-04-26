@@ -1,0 +1,8 @@
+prefix=/home/xavier/pid/HD_Ros/install
+
+Name: HD15_IK
+Description: Description of HD15_IK
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

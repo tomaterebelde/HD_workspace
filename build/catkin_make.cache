@@ -1,0 +1,2 @@
+Inverse_kinematics_robotic_arm/testarm/HD15:Inverse_kinematics_robotic_arm/testarm/HD15_IK:Inverse_kinematics_robotic_arm/testarm/hd_ik_cmd:Inverse_kinematics_robotic_arm/testarm/hd_ik_demo:Inverse_kinematics_robotic_arm/testarm/hd_mp:controller_motors
+-DCATKIN_DEVEL_PREFIX=/home/xavier/pid/HD_Ros/devel -DCMAKE_INSTALL_PREFIX=/home/xavier/pid/HD_Ros/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/xavier/pid/HD_Ros/install
+
+Name: controller_motors
+Description: Description of controller_motors
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: rospy roscpp message_runtime
