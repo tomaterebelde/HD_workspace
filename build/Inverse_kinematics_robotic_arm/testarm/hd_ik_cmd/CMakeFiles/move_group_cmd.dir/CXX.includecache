@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/xavier/pid/HD_Ros/src/Inverse_kinematics_robotic_arm/testarm/hd_ik_cmd/src/move_group_cmd.cpp
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/Inverse_kinematics_robotic_arm/testarm/hd_ik_cmd/src/move_group_cmd.cpp
 ros/ros.h
 -
 ros/callback_queue.h

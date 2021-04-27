@@ -138,15 +138,6 @@ namespace ethercatcpp {
       * @brief Function used to launch the CanOpen configuration function
       */
       void canopen_Launch_Configuration();
-      
-      /**
-      * @brief Function used to set specific ID to the slave.
-      *
-      * @param [in] name is slave name.
-      * @param [in] manufacturer is the slave manufacturer ID.
-      * @param [in] model is the slave model ID.
-      */
-      void set_Id(const std::string & name, uint32_t manufacturer, uint32_t model);
 
 
     protected:
@@ -251,6 +242,15 @@ namespace ethercatcpp {
       * @param [in] post is the function witch is execute after a end step (generally get status and datas).
       */
       void add_End_Step(std::function<void()>&& pre, std::function<void()>&& post);
+
+      /**
+      * @brief Function used to set specific ID to the slave.
+      *
+      * @param [in] name is slave name.
+      * @param [in] manufacturer is the slave manufacturer ID.
+      * @param [in] model is the slave model ID.
+      */
+      void set_Id(const std::string & name, uint32_t manufacturer, uint32_t model);
 
       /**
       * @brief Function used to set input buffer size to the slave.

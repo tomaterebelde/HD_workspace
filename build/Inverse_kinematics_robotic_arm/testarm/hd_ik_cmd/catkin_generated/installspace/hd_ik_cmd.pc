@@ -1,4 +1,4 @@
-prefix=/home/xavier/pid/HD_Ros/install
+prefix=/media/xplore/etienne_vol/Xplore/HD_workspace/install
 
 Name: hd_ik_cmd
 Description: Description of hd_ik_cmd

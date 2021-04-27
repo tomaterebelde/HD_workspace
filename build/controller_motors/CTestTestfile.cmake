@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/xavier/pid/HD_Ros/src/controller_motors
-# Build directory: /home/xavier/pid/HD_Ros/build/controller_motors
+# Source directory: /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors
+# Build directory: /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xavier/pid/HD_Ros/src
+CMAKE_SOURCE_DIR = /media/xplore/etienne_vol/Xplore/HD_workspace/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xavier/pid/HD_Ros/build
+CMAKE_BINARY_DIR = /media/xplore/etienne_vol/Xplore/HD_workspace/build
 
 # Include any dependencies generated for this target.
 include controller_motors/CMakeFiles/controller_motors.dir/depend.make
@@ -57,80 +57,81 @@ include controller_motors/CMakeFiles/controller_motors.dir/progress.make
 # Include the compile flags for this target's objects.
 include controller_motors/CMakeFiles/controller_motors.dir/flags.make
 
-controller_motors/CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.o: controller_motors/CMakeFiles/controller_motors.dir/flags.make
-controller_motors/CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.o: /home/xavier/pid/HD_Ros/src/controller_motors/src/controller_motors_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xavier/pid/HD_Ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object controller_motors/CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.o"
-	cd /home/xavier/pid/HD_Ros/build/controller_motors && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.o -c /home/xavier/pid/HD_Ros/src/controller_motors/src/controller_motors_test.cpp
+controller_motors/CMakeFiles/controller_motors.dir/src/driver_main.cpp.o: controller_motors/CMakeFiles/controller_motors.dir/flags.make
+controller_motors/CMakeFiles/controller_motors.dir/src/driver_main.cpp.o: /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/src/driver_main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object controller_motors/CMakeFiles/controller_motors.dir/src/driver_main.cpp.o"
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controller_motors.dir/src/driver_main.cpp.o -c /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/src/driver_main.cpp
 
-controller_motors/CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.i"
-	cd /home/xavier/pid/HD_Ros/build/controller_motors && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xavier/pid/HD_Ros/src/controller_motors/src/controller_motors_test.cpp > CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.i
+controller_motors/CMakeFiles/controller_motors.dir/src/driver_main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controller_motors.dir/src/driver_main.cpp.i"
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/src/driver_main.cpp > CMakeFiles/controller_motors.dir/src/driver_main.cpp.i
 
-controller_motors/CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.s"
-	cd /home/xavier/pid/HD_Ros/build/controller_motors && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xavier/pid/HD_Ros/src/controller_motors/src/controller_motors_test.cpp -o CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.s
+controller_motors/CMakeFiles/controller_motors.dir/src/driver_main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controller_motors.dir/src/driver_main.cpp.s"
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/src/driver_main.cpp -o CMakeFiles/controller_motors.dir/src/driver_main.cpp.s
 
-controller_motors/CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.o.requires:
+controller_motors/CMakeFiles/controller_motors.dir/src/driver_main.cpp.o.requires:
 
-.PHONY : controller_motors/CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.o.requires
+.PHONY : controller_motors/CMakeFiles/controller_motors.dir/src/driver_main.cpp.o.requires
 
-controller_motors/CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.o.provides: controller_motors/CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.o.requires
-	$(MAKE) -f controller_motors/CMakeFiles/controller_motors.dir/build.make controller_motors/CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.o.provides.build
-.PHONY : controller_motors/CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.o.provides
+controller_motors/CMakeFiles/controller_motors.dir/src/driver_main.cpp.o.provides: controller_motors/CMakeFiles/controller_motors.dir/src/driver_main.cpp.o.requires
+	$(MAKE) -f controller_motors/CMakeFiles/controller_motors.dir/build.make controller_motors/CMakeFiles/controller_motors.dir/src/driver_main.cpp.o.provides.build
+.PHONY : controller_motors/CMakeFiles/controller_motors.dir/src/driver_main.cpp.o.provides
 
-controller_motors/CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.o.provides.build: controller_motors/CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.o
+controller_motors/CMakeFiles/controller_motors.dir/src/driver_main.cpp.o.provides.build: controller_motors/CMakeFiles/controller_motors.dir/src/driver_main.cpp.o
 
 
 # Object files for target controller_motors
 controller_motors_OBJECTS = \
-"CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.o"
+"CMakeFiles/controller_motors.dir/src/driver_main.cpp.o"
 
 # External object files for target controller_motors
 controller_motors_EXTERNAL_OBJECTS =
 
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: controller_motors/CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.o
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: controller_motors/CMakeFiles/controller_motors.dir/build.make
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/libmessage_filters.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/libroscpp.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/libroscpp_serialization.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/libxmlrpcpp.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/librosconsole.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/librosconsole_log4cxx.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/librosconsole_backend_interface.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/librostime.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/libcpp_common.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /home/xavier/pid/HD_Ros/src/controller_motors/lib/libethercatcpp-core_ethercatcpp-core.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /home/xavier/pid/HD_Ros/src/controller_motors/lib/libethercatcpp-epos_ethercatcpp-epos.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /home/xavier/pid/HD_Ros/src/controller_motors/lib/libpid-os-utilities_pid-signal-manager.so
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: /home/xavier/pid/HD_Ros/src/controller_motors/lib/libsoem.a
-/home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors: controller_motors/CMakeFiles/controller_motors.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xavier/pid/HD_Ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors"
-	cd /home/xavier/pid/HD_Ros/build/controller_motors && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/controller_motors.dir/link.txt --verbose=$(VERBOSE)
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: controller_motors/CMakeFiles/controller_motors.dir/src/driver_main.cpp.o
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: controller_motors/CMakeFiles/controller_motors.dir/build.make
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/libmessage_filters.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/libroscpp.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/libroscpp_serialization.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/libxmlrpcpp.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/librosconsole.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/librosconsole_log4cxx.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/librosconsole_backend_interface.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /usr/lib/aarch64-linux-gnu/liblog4cxx.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /usr/lib/aarch64-linux-gnu/libboost_regex.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/librostime.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /opt/ros/melodic/lib/libcpp_common.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /usr/lib/aarch64-linux-gnu/libboost_system.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /usr/lib/aarch64-linux-gnu/libboost_thread.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /usr/lib/aarch64-linux-gnu/libboost_chrono.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /usr/lib/aarch64-linux-gnu/libboost_date_time.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /usr/lib/aarch64-linux-gnu/libboost_atomic.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /usr/lib/aarch64-linux-gnu/libpthread.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /usr/lib/aarch64-linux-gnu/libconsole_bridge.so.0.4
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/lib/libethercatcpp-core_ethercatcpp-core.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/lib/libethercatcpp-epos_ethercatcpp-epos.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/lib/libpid-os-utilities_pid-signal-manager.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/lib/libsoem.a
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/lib/libxcontrol_xcontrol.so
+/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors: controller_motors/CMakeFiles/controller_motors.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors"
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/controller_motors.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-controller_motors/CMakeFiles/controller_motors.dir/build: /home/xavier/pid/HD_Ros/devel/lib/controller_motors/controller_motors
+controller_motors/CMakeFiles/controller_motors.dir/build: /media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/controller_motors/controller_motors
 
 .PHONY : controller_motors/CMakeFiles/controller_motors.dir/build
 
-controller_motors/CMakeFiles/controller_motors.dir/requires: controller_motors/CMakeFiles/controller_motors.dir/src/controller_motors_test.cpp.o.requires
+controller_motors/CMakeFiles/controller_motors.dir/requires: controller_motors/CMakeFiles/controller_motors.dir/src/driver_main.cpp.o.requires
 
 .PHONY : controller_motors/CMakeFiles/controller_motors.dir/requires
 
 controller_motors/CMakeFiles/controller_motors.dir/clean:
-	cd /home/xavier/pid/HD_Ros/build/controller_motors && $(CMAKE_COMMAND) -P CMakeFiles/controller_motors.dir/cmake_clean.cmake
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors && $(CMAKE_COMMAND) -P CMakeFiles/controller_motors.dir/cmake_clean.cmake
 .PHONY : controller_motors/CMakeFiles/controller_motors.dir/clean
 
 controller_motors/CMakeFiles/controller_motors.dir/depend:
-	cd /home/xavier/pid/HD_Ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xavier/pid/HD_Ros/src /home/xavier/pid/HD_Ros/src/controller_motors /home/xavier/pid/HD_Ros/build /home/xavier/pid/HD_Ros/build/controller_motors /home/xavier/pid/HD_Ros/build/controller_motors/CMakeFiles/controller_motors.dir/DependInfo.cmake --color=$(COLOR)
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/xplore/etienne_vol/Xplore/HD_workspace/src /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors /media/xplore/etienne_vol/Xplore/HD_workspace/build /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/CMakeFiles/controller_motors.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : controller_motors/CMakeFiles/controller_motors.dir/depend
 

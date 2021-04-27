@@ -6,23 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/xavier/pid/HD_Ros/devel/include/controller_motors/WheelVelocity.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-
-/home/xavier/pid/HD_Ros/src/controller_motors/include/ethercatcpp/epos4.h
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/include/ethercatcpp/epos4.h
 ethercatcpp/ethercat_unit_device.h
 -
 cmath
@@ -34,11 +18,11 @@ string
 vector
 -
 
-/home/xavier/pid/HD_Ros/src/controller_motors/include/ethercatcpp/ethercat_bus.h
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/include/ethercatcpp/ethercat_bus.h
 ethercatcpp/ethercat_device.h
 -
 
-/home/xavier/pid/HD_Ros/src/controller_motors/include/ethercatcpp/ethercat_device.h
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/include/ethercatcpp/ethercat_device.h
 iostream
 -
 string
@@ -48,7 +32,7 @@ vector
 ethercatcpp/slave.h
 -
 
-/home/xavier/pid/HD_Ros/src/controller_motors/include/ethercatcpp/ethercat_unit_device.h
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/include/ethercatcpp/ethercat_unit_device.h
 ethercatcpp/ethercat_device.h
 -
 iostream
@@ -60,7 +44,7 @@ vector
 map
 -
 
-/home/xavier/pid/HD_Ros/src/controller_motors/include/ethercatcpp/master.h
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/include/ethercatcpp/master.h
 ethercatcpp/slave.h
 -
 ethercatcpp/ethercat_bus.h
@@ -78,7 +62,7 @@ cstring
 cstdio
 -
 
-/home/xavier/pid/HD_Ros/src/controller_motors/include/ethercatcpp/slave.h
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/include/ethercatcpp/slave.h
 iostream
 -
 string
@@ -94,7 +78,7 @@ stdint.h
 string.h
 -
 
-/home/xavier/pid/HD_Ros/src/controller_motors/include/pid/signal_manager.h
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/include/pid/signal_manager.h
 map
 -
 list
@@ -104,25 +88,47 @@ signal.h
 functional
 -
 
-/home/xavier/pid/HD_Ros/src/controller_motors/src/controller_motors_test.cpp
-controller_motors/WheelVelocity.h
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/include/xcontrol/epos4_extended.h
+ethercatcpp/epos4.h
+-
+string
+-
+vector
+-
+
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/include/xcontrol/network_master.h
+ethercatcpp/master.h
+-
+xcontrol/epos4_extended.h
+-
+string
+-
+vector
+-
+
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/include/xcontrol/one_axis_slot.h
+xcontrol/epos4_extended.h
+-
+
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/include/xcontrol/three_axis_slot.h
+xcontrol/epos4_extended.h
+-
+
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/src/driver_main.cpp
+sensor_msgs/JointState.h
 -
 ros/ros.h
-/home/xavier/pid/HD_Ros/src/controller_motors/src/ros/ros.h
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/src/ros/ros.h
 std_msgs/String.h
-/home/xavier/pid/HD_Ros/src/controller_motors/src/std_msgs/String.h
-sensor_msgs/PointCloud2.h
-/home/xavier/pid/HD_Ros/src/controller_motors/src/sensor_msgs/PointCloud2.h
-sensor_msgs/Image.h
-/home/xavier/pid/HD_Ros/src/controller_motors/src/sensor_msgs/Image.h
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/src/std_msgs/String.h
 string
 -
 message_filters/subscriber.h
-/home/xavier/pid/HD_Ros/src/controller_motors/src/message_filters/subscriber.h
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/src/message_filters/subscriber.h
 message_filters/time_synchronizer.h
-/home/xavier/pid/HD_Ros/src/controller_motors/src/message_filters/time_synchronizer.h
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/src/message_filters/time_synchronizer.h
 message_filters/cache.h
-/home/xavier/pid/HD_Ros/src/controller_motors/src/message_filters/cache.h
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/src/message_filters/cache.h
 iostream
 -
 chrono
@@ -135,9 +141,11 @@ sys/mman.h
 -
 pid/signal_manager.h
 -
-ethercatcpp/master.h
+xcontrol/network_master.h
 -
-ethercatcpp/epos4.h
+xcontrol/one_axis_slot.h
+-
+xcontrol/three_axis_slot.h
 -
 
 /opt/ros/melodic/include/message_filters/cache.h
@@ -972,7 +980,7 @@ ros/forwards.h
 
 /opt/ros/melodic/include/rosconsole/macros_generated.h
 
-/opt/ros/melodic/include/sensor_msgs/Image.h
+/opt/ros/melodic/include/sensor_msgs/JointState.h
 string
 -
 vector
@@ -988,42 +996,6 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 std_msgs/Header.h
--
-
-/opt/ros/melodic/include/sensor_msgs/PointCloud2.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-std_msgs/Header.h
--
-sensor_msgs/PointField.h
--
-
-/opt/ros/melodic/include/sensor_msgs/PointField.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
 -
 
 /opt/ros/melodic/include/std_msgs/Header.h

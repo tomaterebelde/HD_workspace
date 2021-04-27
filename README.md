@@ -9,6 +9,6 @@ If not already present in your `~/.bashrc`.
 
 ```bash 
 sudo apt-get install ros-melodic-moveit
-sudo apt-get install ros-kinetic-moveit-visual-tools
+sudo apt-get install ros-melodic-moveit-visual-tools
 sudo apt-get install ros-melodic-rviz-visual-tools
 ```

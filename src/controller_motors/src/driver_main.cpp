@@ -1,8 +1,6 @@
 #include <sensor_msgs/JointState.h>
 #include "ros/ros.h"
 #include "std_msgs/String.h"
-#include "sensor_msgs/PointCloud2.h"
-#include "sensor_msgs/Image.h"
 #include <string>
 #include "message_filters/subscriber.h"
 #include "message_filters/time_synchronizer.h"
@@ -16,413 +14,147 @@
 #include <sys/mman.h>
 #include <pid/signal_manager.h>
 
-#include <ethercatcpp/master.h>
-#include <ethercatcpp/epos4.h>
+#include <xcontrol/network_master.h>
+#include <xcontrol/one_axis_slot.h>
+#include <xcontrol/three_axis_slot.h>
 
 using namespace std;
 using namespace std::chrono;
 using namespace ethercatcpp;
 using namespace pid;
-
+using namespace xcontrol;
 
 using namespace message_filters;
 using namespace sensor_msgs;
 
 Epos4::control_mode_t control_mode;
 std::string network_interface_name;
-double target_value [6] = {0, 0, 0, 0, 0, 0};
+double target_value[6] = {0, 0, 0, 0, 0, 0};
 
-static const int period = 40; // [ms]  1ms does not work
+static const int period = 200; // [ms]  1ms does not work
 
-void wheel_callback(const sensor_msgs::JoinState::ConstPtr& msg){
-  /*
-   * whenever a message of type WheelVeloicity is published on the /wheel_publisher topic
-   * this callback is called
-   *
-   * wheel_callback updates the values of the target_value array which contains the reference 
-   * individual wheel speeds expressed in RPMs
-  */
-  target_value[0] = msg->position[0];
-  target_value[1] = msg->position[1];
-  target_value[2] = msg->position[2];
-  target_value[3] = msg->position[3];
-  target_value[4] = msg->position[4];
-  target_value[5] = msg->position[5];
-}
-
-void check_epos_state(Epos4& epos, Epos4::control_mode_t& control_mode){
-  // Change state of Epos sfm to Lunch power
-  if (epos.get_Device_State_In_String() == "Switch on disable") {
-    epos.set_Device_State_Control_Word(Epos4::shutdown);
-  }
-  if (epos.get_Device_State_In_String() == "Ready to switch ON") {
-    epos.set_Device_State_Control_Word(Epos4::switch_on_and_enable_op);
-  }
-  // Set type of control
-  epos.set_Control_Mode(control_mode);
-}
-
-void command_epos(Epos4& epos, Epos4::control_mode_t& control_mode, float target_value){
-  /*
-  *
-  *  TODO: handle the case when we want the motor to stop (now we have to send 0)
-  *
-  */
-  if ( epos.get_Device_State_In_String() == "Operation enable") {
-    if (control_mode == Epos4::position_CSP){
-      epos.set_Target_Position_In_Qc(target_value);
-      cout << "Desired position value = " << std::dec <<target_value << " qc" << "\n";
-    }else if (control_mode == Epos4::velocity_CSV){
-      epos.set_Target_Velocity_In_Rpm(target_value);
-      cout << "Desired velocity value = " << std::dec <<target_value << " rpm" << "\n";
-    }else if (control_mode == Epos4::torque_CST){
-      epos.set_Target_Torque_In_Nm(target_value);
-      cout << "Desired target value = " << std::dec <<target_value << " Nm"<< "\n";
-    }
-    
-    if (control_mode == Epos4::profile_position_PPM){
-      // unlock axle
-      epos.halt_Axle(false);
-      // Starting new positionning at receive new order (or wait finish before start new with "false state")
-      epos.change_Starting_New_Pos_Config(true);
-      // normal mode (not in endless)
-      epos.active_Endless_Movement(false);
-
-      //epos.active_Absolute_Positionning();
-      epos.active_Relative_Positionning();
-
-      if (!(epos.get_Device_State_In_String() == "Operation enable")) {
-        epos.activate_Profile_Control(false);
-      } else {
-        cout << "************************************** \n";
-        epos.activate_Profile_Control(true);
-        epos.set_Target_Position_In_Qc(target_value);
-        cout << "Desired position value = " << std::dec <<target_value << " qc" << "\n";
-      }
-    }
-  }
+void inverse_kinematics_callback(const sensor_msgs::JointState::ConstPtr& msg){
+	/*
+	* whenever a message of type WheelVeloicity is published on the /wheel_publisher topic
+	* this callback is called
+	*
+	* wheel_callback updates the values of the target_value array which contains the reference 
+	* individual wheel speeds expressed in RPMs
+	*/
+	target_value[0] = msg->position[0];
+	target_value[1] = msg->position[1];
+	target_value[2] = msg->position[2];
+	target_value[3] = msg->position[3];
+	target_value[4] = msg->position[4];
+	target_value[5] = msg->position[5];
 }
 
 int main(int argc, char **argv){
 
-  ros::init(argc, argv, "controller_motors");
-  ros::NodeHandle n;
-  ros::Subscriber sub = n.subscribe<controller_motors::WheelVelocity>("wheel_publisher", 10, wheel_callback);
+	ros::init(argc, argv, "controller_motors");
+	ros::NodeHandle n;
+	// ros::Subscriber sub = n.subscribe<sensor_msgs::JoinState>("TOPIC NAME", 10, inverse_kinematics_callback);
 
-  cout << "ROS node initialized" << endl;
+	cout << "ROS node initialized" << endl;
 
-  network_interface_name = "eth1";
-  std::string input_control_mode = "cyclic_velocity";
-  std::string input_target = "10";
-  //target_value = atof(input_target.c_str());
+	network_interface_name = "eth1";
+	std::string input_control_mode = "cyclic_velocity";
+	std::string input_target = "1000";
+	for(size_t i=0; i<3; i++) {
+		target_value[i] = atof(input_target.c_str());
+	}
 
-  //Check input control mode
-  if (input_control_mode == "cyclic_position"){
-    control_mode = Epos4::position_CSP ;
-  }else if(input_control_mode == "cyclic_velocity"){
-    control_mode = Epos4::velocity_CSV;
-  }else if(input_control_mode == "cyclic_torque"){
-    control_mode = Epos4::torque_CST;
-  }else if(input_control_mode == "profile_position"){
-    control_mode = Epos4::profile_position_PPM;
-  }else {
-    cout << "Invalid input: control mode (\"cyclic_position\" in qc,"
-        << "\"cyclic_velocity\" in rpm, \"cyclic_torque\" in Nm) or"
-        << "\"profile_position\" in qc"
-        << "and target value " <<endl;
-    exit (0);
-  }
+  	// Device definition
+	xcontrol::OneAxisSlot epos_1(true);
 
-  // Master creation
-  Master master_ethercat;
+	vector<xcontrol::Epos4Extended*> chain = {&epos_1};
 
-  // Bus creation
-  EthercatBus robot;
+	xcontrol::NetworkMaster ethercat_master(chain, network_interface_name);
 
-  // Adding network interface
-  master_ethercat.add_Interface_Primary ( network_interface_name );
+	ethercat_master.init_network();
 
-  // Device definition
-  Epos4 epos_1, epos_2, epos_3, epos_4, epos_5, epos_6;
+	cout << "Ethercat network online" << endl;
 
-  epos_1.set_Id("EPOS4", 0x000000fb, 0x60500000);
-  epos_1.set_Id("EPOS4", 0x000000fb, 0x60500000);
-  epos_1.set_Id("EPOS4", 0x000000fb, 0x60500000);
-  epos_1.set_Id("EPOS4", 0x000000fb, 0x60500000);
-  epos_1.set_Id("EPOS4", 0x000000fb, 0x60500000);
-  epos_1.set_Id("EPOS4", 0x000000fb, 0x60500000);
-  epos_6.set_Id("EPOS4", 0x000000fb, 0x60500000);
+	high_resolution_clock::time_point time_point_start_loop;
 
-  // Linking device to bus in hardware order 
-  robot.add_Device ( epos_1 );
-  robot.add_Device ( epos_2 );
-  robot.add_Device ( epos_3 );
-  robot.add_Device ( epos_4 );
-  robot.add_Device ( epos_5 );
-  robot.add_Device ( epos_6 );
+	while(ros::ok()){ 
+		// Get current time
+		time_point_start_loop = high_resolution_clock::now();
+		// check device status
+		ethercat_master.switch_motors_to_enable_op();
 
-  //add bus to master
-  master_ethercat.add_Bus( robot );
+		for(size_t it=0; it<chain.size(); ++it) {
+			cout << "Does it go here?\n";
+			chain[it]->set_Control_Mode(control_mode);
 
-  cout << "Ethercat network online" << endl;
+			if (chain[it]->get_Device_State_In_String() == "Operation enable") {
+				if (control_mode == Epos4::position_CSP) {
+					chain[it]->set_Target_Position_In_Qc(target_value[it]);
+					cout << "Desired position value = " << std::dec <<target_value[it] << " qc" << "\n";
+				} else if (control_mode == Epos4::velocity_CSV) {
+					chain[it]->set_Target_Velocity_In_Rpm(target_value[it]);
+					cout << "Desired velocity value = " << std::dec <<target_value[it] << " rpm" << "\n";
+				} else if (control_mode == Epos4::torque_CST) {
+					chain[it]->set_Target_Torque_In_Nm(target_value[it]);
+					cout << "Desired target value = " << std::dec <<target_value[it] << " Nm"<< "\n";
+				}
 
-  high_resolution_clock::time_point time_point_start_loop;
+				if (control_mode == Epos4::profile_position_PPM) {
+					// unlock axle
+					chain[it]->halt_Axle(false);
+					// Starting new positionning at receive new order (or wait finish before start new with "false state")
+					chain[it]->change_Starting_New_Pos_Config(true);
+					// normal mode (not in endless)
+					chain[it]->active_Endless_Movement(false);
 
-  while(ros::ok()){ 
-    // Get current time
-    time_point_start_loop = high_resolution_clock::now();
-    // check device status
-    check_epos_state(epos_1, control_mode);
-    check_epos_state(epos_2, control_mode);
-    check_epos_state(epos_3, control_mode);
-    check_epos_state(epos_4, control_mode);
-    check_epos_state(epos_5, control_mode);
-    check_epos_state(epos_6, control_mode);
-    // command the devuce
-    command_epos(epos_1, control_mode, target_value[0]);
-    command_epos(epos_2, control_mode, target_value[1]);
-    command_epos(epos_3, control_mode, target_value[2]);
-    command_epos(epos_4, control_mode, target_value[3]);
-    command_epos(epos_5, control_mode, target_value[4]);
-    command_epos(epos_6, control_mode, target_value[5]);
-    
-        // // // epos_L_3.set_Digital_Output_State(Epos4::dig_out_1, false);
-    // // epos_L_3.set_Digital_Output_State(Epos4::dig_out_2, false);
-    // epos_L_3.set_Digital_Output_State(Epos4::dig_out_hs_1, false);
+					//epos.active_Absolute_Positionning();
+					chain[it]->active_Relative_Positionning();
 
-    bool wkc = master_ethercat.next_Cycle(); // Function used to launch next cycle of the EtherCat net
-
-    if (wkc == true) {
-      //EPOS_L_1
-      cout << "State device : " << epos_1.get_Device_State_In_String() << "\n";
-      cout << "Control mode = " << epos_1.get_Control_Mode_In_String() << "\n";
-  /*
-      cout << "Actual position : " << std::dec <<epos_L_2.get_Actual_Position_In_Qc() << " qc" << "\n";
-      cout << "Actual position : " << std::dec <<epos_L_2.get_Actual_Position_In_Rad() << " rad" << "\n";
-
-      cout << "Actual velocity : " << std::dec << epos_L_2.get_Actual_Velocity_In_Rads() << " rad/s"<<  "\n";
-      cout << "Actual Average velocity : " << std::dec << epos_L_2.get_Actual_Average_Velocity_In_Rads() << " rad/s"<<  "\n";
-      cout << "Actual velocity : " << std::dec << epos_L_2.get_Actual_Velocity_In_Rpm() << " rpm"<<  "\n";
-      cout << "Actual Average velocity : " << std::dec << epos_L_2.get_Actual_Average_Velocity_In_Rpm() << " rpm"<<  "\n";
-      cout << "Actual torque : " << std::dec << epos_L_2.get_Actual_Torque_In_Nm() << " Nm"<< "\n";
-      cout << "Actual Average torque : " << std::dec << epos_L_2.get_Actual_Average_Torque_In_Nm() << " Nm"<< "\n";
-      cout << "Actual torque : " << std::dec << epos_L_2.get_Actual_Torque_In_RT() << " per mile RT"<< "\n";
-      cout << "Actual Average torque : " << std::dec << epos_L_2.get_Actual_Average_Torque_In_RT() << " per mile RT"<< "\n";
-      cout << "Actual current : " << std::dec << epos_L_2.get_Actual_Current_In_A() << " A"<< "\n";
-      cout << "Actual Average current : " << std::dec << epos_L_2.get_Actual_Average_Current_In_A() << " A"<< "\n";
-  */
-      // Specific for PPM mode
-      if (control_mode == Epos4::profile_position_PPM){
-        cout << "Target is reached : " << epos_1.check_target_reached() << "\n";
-      }
-
-      // cout << "Digital Input 1 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_1) << "\n";
-      // cout << "Digital Input 2 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_2) << "\n";
-      // cout << "Digital Input 3 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_3) << "\n";
-      // cout << "Digital Input 4 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_4) << "\n";
-      // cout << "Digital Input Hs 1 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_1) << "\n";
-      // cout << "Digital Input Hs 2 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_2) << "\n";
-      // cout << "Digital Input Hs 3 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_3) << "\n";
-      // cout << "Digital Input Hs 4 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_4) << "\n";
-
-      // cout << "Analog Input 1 = " << epos_L_2.get_Analog_Input(Epos4::analog_in_1) << " V" << "\n";
-      // cout << "Analog Input 2 = " << epos_L_2.get_Analog_Input(Epos4::analog_in_2) << " V" << "\n";
-
-      //EPOS_L_2
-      cout << "State device : " << epos_2.get_Device_State_In_String() << "\n";
-      cout << "Control mode = " << epos_2.get_Control_Mode_In_String() << "\n";
-  /*
-      cout << "Actual position : " << std::dec <<epos_L_2.get_Actual_Position_In_Qc() << " qc" << "\n";
-      cout << "Actual position : " << std::dec <<epos_L_2.get_Actual_Position_In_Rad() << " rad" << "\n";
-
-      cout << "Actual velocity : " << std::dec << epos_L_2.get_Actual_Velocity_In_Rads() << " rad/s"<<  "\n";
-      cout << "Actual Average velocity : " << std::dec << epos_L_2.get_Actual_Average_Velocity_In_Rads() << " rad/s"<<  "\n";
-      cout << "Actual velocity : " << std::dec << epos_L_2.get_Actual_Velocity_In_Rpm() << " rpm"<<  "\n";
-      cout << "Actual Average velocity : " << std::dec << epos_L_2.get_Actual_Average_Velocity_In_Rpm() << " rpm"<<  "\n";
-      cout << "Actual torque : " << std::dec << epos_L_2.get_Actual_Torque_In_Nm() << " Nm"<< "\n";
-      cout << "Actual Average torque : " << std::dec << epos_L_2.get_Actual_Average_Torque_In_Nm() << " Nm"<< "\n";
-      cout << "Actual torque : " << std::dec << epos_L_2.get_Actual_Torque_In_RT() << " per mile RT"<< "\n";
-      cout << "Actual Average torque : " << std::dec << epos_L_2.get_Actual_Average_Torque_In_RT() << " per mile RT"<< "\n";
-      cout << "Actual current : " << std::dec << epos_L_2.get_Actual_Current_In_A() << " A"<< "\n";
-      cout << "Actual Average current : " << std::dec << epos_L_2.get_Actual_Average_Current_In_A() << " A"<< "\n";
-  */
-      // Specific for PPM mode
-      if (control_mode == Epos4::profile_position_PPM){
-        cout << "Target is reached : " << epos_2.check_target_reached() << "\n";
-      }
-
-      // cout << "Digital Input 1 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_1) << "\n";
-      // cout << "Digital Input 2 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_2) << "\n";
-      // cout << "Digital Input 3 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_3) << "\n";
-      // cout << "Digital Input 4 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_4) << "\n";
-      // cout << "Digital Input Hs 1 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_1) << "\n";
-      // cout << "Digital Input Hs 2 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_2) << "\n";
-      // cout << "Digital Input Hs 3 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_3) << "\n";
-      // cout << "Digital Input Hs 4 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_4) << "\n";
-
-      // cout << "Analog Input 1 = " << epos_L_2.get_Analog_Input(Epos4::analog_in_1) << " V" << "\n";
-      // cout << "Analog Input 2 = " << epos_L_2.get_Analog_Input(Epos4::analog_in_2) << " V" << "\n";
-
-      //EPOS_L_3
-      cout << "State device : " << epos_3.get_Device_State_In_String() << "\n";
-      cout << "Control mode = " << epos_3.get_Control_Mode_In_String() << "\n";
-  /*
-      cout << "Actual position : " << std::dec <<epos_L_3.get_Actual_Position_In_Qc() << " qc" << "\n";
-      cout << "Actual position : " << std::dec <<epos_L_3.get_Actual_Position_In_Rad() << " rad" << "\n";
-
-      cout << "Actual velocity : " << std::dec << epos_L_3.get_Actual_Velocity_In_Rads() << " rad/s"<<  "\n";
-      cout << "Actual Average velocity : " << std::dec << epos_L_3.get_Actual_Average_Velocity_In_Rads() << " rad/s"<<  "\n";
-      cout << "Actual velocity : " << std::dec << epos_L_3.get_Actual_Velocity_In_Rpm() << " rpm"<<  "\n";
-      cout << "Actual Average velocity : " << std::dec << epos_L_3.get_Actual_Average_Velocity_In_Rpm() << " rpm"<<  "\n";
-      cout << "Actual torque : " << std::dec << epos_L_3.get_Actual_Torque_In_Nm() << " Nm"<< "\n";
-      cout << "Actual Average torque : " << std::dec << epos_L_3.get_Actual_Average_Torque_In_Nm() << " Nm"<< "\n";
-      cout << "Actual torque : " << std::dec << epos_L_3.get_Actual_Torque_In_RT() << " per mile RT"<< "\n";
-      cout << "Actual Average torque : " << std::dec << epos_L_3.get_Actual_Average_Torque_In_RT() << " per mile RT"<< "\n";
-      cout << "Actual current : " << std::dec << epos_L_3.get_Actual_Current_In_A() << " A"<< "\n";
-      cout << "Actual Average current : " << std::dec << epos_L_3.get_Actual_Average_Current_In_A() << " A"<< "\n";
-  */
-      // Specific for PPM mode
-      if (control_mode == Epos4::profile_position_PPM){
-        cout << "Target is reached : " << epos_3.check_target_reached() << "\n";
-      }
-
-      // cout << "Digital Input 1 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_1) << "\n";
-      // cout << "Digital Input 2 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_2) << "\n";
-      // cout << "Digital Input 3 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_3) << "\n";
-      // cout << "Digital Input 4 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_4) << "\n";
-      // cout << "Digital Input Hs 1 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_hs_1) << "\n";
-      // cout << "Digital Input Hs 2 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_hs_2) << "\n";
-      // cout << "Digital Input Hs 3 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_hs_3) << "\n";
-      // cout << "Digital Input Hs 4 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_hs_4) << "\n";
-
-      // cout << "Analog Input 1 = " << epos_L_3.get_Analog_Input(Epos4::analog_in_1) << " V" << "\n";
-      // cout << "Analog Input 2 = " << epos_L_3.get_Analog_Input(Epos4::analog_in_2) << " V" << "\n";
-
-       //EPOS_R_1
-      cout << "State device : " << epos_4.get_Device_State_In_String() << "\n";
-      cout << "Control mode = " << epos_4.get_Control_Mode_In_String() << "\n";
-  /*
-      cout << "Actual position : " << std::dec <<epos_L_2.get_Actual_Position_In_Qc() << " qc" << "\n";
-      cout << "Actual position : " << std::dec <<epos_L_2.get_Actual_Position_In_Rad() << " rad" << "\n";
-
-      cout << "Actual velocity : " << std::dec << epos_L_2.get_Actual_Velocity_In_Rads() << " rad/s"<<  "\n";
-      cout << "Actual Average velocity : " << std::dec << epos_L_2.get_Actual_Average_Velocity_In_Rads() << " rad/s"<<  "\n";
-      cout << "Actual velocity : " << std::dec << epos_L_2.get_Actual_Velocity_In_Rpm() << " rpm"<<  "\n";
-      cout << "Actual Average velocity : " << std::dec << epos_L_2.get_Actual_Average_Velocity_In_Rpm() << " rpm"<<  "\n";
-      cout << "Actual torque : " << std::dec << epos_L_2.get_Actual_Torque_In_Nm() << " Nm"<< "\n";
-      cout << "Actual Average torque : " << std::dec << epos_L_2.get_Actual_Average_Torque_In_Nm() << " Nm"<< "\n";
-      cout << "Actual torque : " << std::dec << epos_L_2.get_Actual_Torque_In_RT() << " per mile RT"<< "\n";
-      cout << "Actual Average torque : " << std::dec << epos_L_2.get_Actual_Average_Torque_In_RT() << " per mile RT"<< "\n";
-      cout << "Actual current : " << std::dec << epos_L_2.get_Actual_Current_In_A() << " A"<< "\n";
-      cout << "Actual Average current : " << std::dec << epos_L_2.get_Actual_Average_Current_In_A() << " A"<< "\n";
-  */
-      // Specific for PPM mode
-      if (control_mode == Epos4::profile_position_PPM){
-        cout << "Target is reached : " << epos_4.check_target_reached() << "\n";
-      }
-
-      // cout << "Digital Input 1 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_1) << "\n";
-      // cout << "Digital Input 2 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_2) << "\n";
-      // cout << "Digital Input 3 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_3) << "\n";
-      // cout << "Digital Input 4 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_4) << "\n";
-      // cout << "Digital Input Hs 1 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_1) << "\n";
-      // cout << "Digital Input Hs 2 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_2) << "\n";
-      // cout << "Digital Input Hs 3 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_3) << "\n";
-      // cout << "Digital Input Hs 4 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_4) << "\n";
-
-      // cout << "Analog Input 1 = " << epos_L_2.get_Analog_Input(Epos4::analog_in_1) << " V" << "\n";
-      // cout << "Analog Input 2 = " << epos_L_2.get_Analog_Input(Epos4::analog_in_2) << " V" << "\n";
-
-      //EPOS_R_2
-      cout << "State device : " << epos_5.get_Device_State_In_String() << "\n";
-      cout << "Control mode = " << epos_5.get_Control_Mode_In_String() << "\n";
-  /*
-      cout << "Actual position : " << std::dec <<epos_L_2.get_Actual_Position_In_Qc() << " qc" << "\n";
-      cout << "Actual position : " << std::dec <<epos_L_2.get_Actual_Position_In_Rad() << " rad" << "\n";
-
-      cout << "Actual velocity : " << std::dec << epos_L_2.get_Actual_Velocity_In_Rads() << " rad/s"<<  "\n";
-      cout << "Actual Average velocity : " << std::dec << epos_L_2.get_Actual_Average_Velocity_In_Rads() << " rad/s"<<  "\n";
-      cout << "Actual velocity : " << std::dec << epos_L_2.get_Actual_Velocity_In_Rpm() << " rpm"<<  "\n";
-      cout << "Actual Average velocity : " << std::dec << epos_L_2.get_Actual_Average_Velocity_In_Rpm() << " rpm"<<  "\n";
-      cout << "Actual torque : " << std::dec << epos_L_2.get_Actual_Torque_In_Nm() << " Nm"<< "\n";
-      cout << "Actual Average torque : " << std::dec << epos_L_2.get_Actual_Average_Torque_In_Nm() << " Nm"<< "\n";
-      cout << "Actual torque : " << std::dec << epos_L_2.get_Actual_Torque_In_RT() << " per mile RT"<< "\n";
-      cout << "Actual Average torque : " << std::dec << epos_L_2.get_Actual_Average_Torque_In_RT() << " per mile RT"<< "\n";
-      cout << "Actual current : " << std::dec << epos_L_2.get_Actual_Current_In_A() << " A"<< "\n";
-      cout << "Actual Average current : " << std::dec << epos_L_2.get_Actual_Average_Current_In_A() << " A"<< "\n";
-  */
-      // Specific for PPM mode
-      if (control_mode == Epos4::profile_position_PPM){
-        cout << "Target is reached : " << epos_5.check_target_reached() << "\n";
-      }
-
-      // cout << "Digital Input 1 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_1) << "\n";
-      // cout << "Digital Input 2 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_2) << "\n";
-      // cout << "Digital Input 3 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_3) << "\n";
-      // cout << "Digital Input 4 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_4) << "\n";
-      // cout << "Digital Input Hs 1 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_1) << "\n";
-      // cout << "Digital Input Hs 2 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_2) << "\n";
-      // cout << "Digital Input Hs 3 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_3) << "\n";
-      // cout << "Digital Input Hs 4 = " << epos_L_2.get_Digital_Input_State(Epos4::dig_in_hs_4) << "\n";
-
-      // cout << "Analog Input 1 = " << epos_L_2.get_Analog_Input(Epos4::analog_in_1) << " V" << "\n";
-      // cout << "Analog Input 2 = " << epos_L_2.get_Analog_Input(Epos4::analog_in_2) << " V" << "\n";
-
-      //EPOS_R_3
-      cout << "State device : " << epos_6.get_Device_State_In_String() << "\n";
-      cout << "Control mode = " << epos_6.get_Control_Mode_In_String() << "\n";
-  /*
-      cout << "Actual position : " << std::dec <<epos_L_3.get_Actual_Position_In_Qc() << " qc" << "\n";
-      cout << "Actual position : " << std::dec <<epos_L_3.get_Actual_Position_In_Rad() << " rad" << "\n";
-
-      cout << "Actual velocity : " << std::dec << epos_L_3.get_Actual_Velocity_In_Rads() << " rad/s"<<  "\n";
-      cout << "Actual Average velocity : " << std::dec << epos_L_3.get_Actual_Average_Velocity_In_Rads() << " rad/s"<<  "\n";
-      cout << "Actual velocity : " << std::dec << epos_L_3.get_Actual_Velocity_In_Rpm() << " rpm"<<  "\n";
-      cout << "Actual Average velocity : " << std::dec << epos_L_3.get_Actual_Average_Velocity_In_Rpm() << " rpm"<<  "\n";
-      cout << "Actual torque : " << std::dec << epos_L_3.get_Actual_Torque_In_Nm() << " Nm"<< "\n";
-      cout << "Actual Average torque : " << std::dec << epos_L_3.get_Actual_Average_Torque_In_Nm() << " Nm"<< "\n";
-      cout << "Actual torque : " << std::dec << epos_L_3.get_Actual_Torque_In_RT() << " per mile RT"<< "\n";
-      cout << "Actual Average torque : " << std::dec << epos_L_3.get_Actual_Average_Torque_In_RT() << " per mile RT"<< "\n";
-      cout << "Actual current : " << std::dec << epos_L_3.get_Actual_Current_In_A() << " A"<< "\n";
-      cout << "Actual Average current : " << std::dec << epos_L_3.get_Actual_Average_Current_In_A() << " A"<< "\n";
-  */
-      // Specific for PPM mode
-      if (control_mode == Epos4::profile_position_PPM){
-        cout << "Target is reached : " << epos_6.check_target_reached() << "\n";
-      }
-
-      // cout << "Digital Input 1 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_1) << "\n";
-      // cout << "Digital Input 2 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_2) << "\n";
-      // cout << "Digital Input 3 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_3) << "\n";
-      // cout << "Digital Input 4 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_4) << "\n";
-      // cout << "Digital Input Hs 1 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_hs_1) << "\n";
-      // cout << "Digital Input Hs 2 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_hs_2) << "\n";
-      // cout << "Digital Input Hs 3 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_hs_3) << "\n";
-      // cout << "Digital Input Hs 4 = " << epos_L_3.get_Digital_Input_State(Epos4::dig_in_hs_4) << "\n";
-
-      // cout << "Analog Input 1 = " << epos_L_3.get_Analog_Input(Epos4::analog_in_1) << " V" << "\n";
-      // cout << "Analog Input 2 = " << epos_L_3.get_Analog_Input(Epos4::analog_in_2) << " V" << "\n";
-
-    } //end of valid workcounter
-
-    high_resolution_clock::time_point time_point_end_loop = high_resolution_clock::now();
-
-    ros::spinOnce();
-
-    // Wait end of period
-    this_thread::sleep_until(time_point_start_loop + chrono::milliseconds(period));
-    duration<double> time_duration_loop = duration_cast<duration<double>>(time_point_end_loop - time_point_start_loop);
-    std::cout << "Time loop = " << time_duration_loop.count() << " seconds.\n";
+					if (!(chain[it]->get_Device_State_In_String() == "Operation enable")) {
+						chain[it]->activate_Profile_Control(false);
+					} else {
+						cout << "************************************** \n";
+						chain[it]->activate_Profile_Control(true);
+						chain[it]->set_Target_Position_In_Qc(target_value[it]);
+						cout << "Desired position value = " << std::dec <<target_value[it] << " qc" << "\n";
+					}
+				}
+			}
+		}
 
 
-    high_resolution_clock::time_point time_point_after_sleep_loop = high_resolution_clock::now();
-    duration<double> time_duration_loop_after_sleep = duration_cast<duration<double>>(time_point_after_sleep_loop - time_point_start_loop);
-    std::cout << "Time loop after sleep = " << time_duration_loop_after_sleep.count() << " seconds.\n";
+		bool wkc = ethercat_master.next_Cycle(); // Function used to launch next cycle of the EtherCat net
+
+		if (wkc == true) {
+			for(Epos4* epos: chain) {
+				cout << "State device : " << epos->get_Device_State_In_String() << "\n";
+				cout << "Control mode = " << epos->get_Control_Mode_In_String() << "\n";
+
+				// Specific for PPM mode
+				if (control_mode == Epos4::profile_position_PPM){
+					cout << "Target is reached : " << epos->check_target_reached() << "\n";
+				}
+			}
+		} //end of valid workcounter
+
+		high_resolution_clock::time_point time_point_end_loop = high_resolution_clock::now();
+
+		ros::spinOnce();
+
+		// Wait end of period
+		this_thread::sleep_until(time_point_start_loop + chrono::milliseconds(period));
+		duration<double> time_duration_loop = duration_cast<duration<double>>(time_point_end_loop - time_point_start_loop);
+		std::cout << "Time loop = " << time_duration_loop.count() << " seconds.\n";
 
 
-    cout << "\n\n\n" << endl;
-  }  
+		high_resolution_clock::time_point time_point_after_sleep_loop = high_resolution_clock::now();
+		duration<double> time_duration_loop_after_sleep = duration_cast<duration<double>>(time_point_after_sleep_loop - time_point_start_loop);
+		std::cout << "Time loop after sleep = " << time_duration_loop_after_sleep.count() << " seconds.\n";
 
-  cout << "End program" << endl;
-  return 0;
+
+		cout << "\n\n\n" << endl;
+	}  
+
+	cout << "End program" << endl;
+	return 0;
 }

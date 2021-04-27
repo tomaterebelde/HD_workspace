@@ -1,8 +1,10 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "controller_motors: 1 messages, 0 services")
+message(WARNING "Invoking generate_messages() without having added any message or service file before.
+You should either add add_message_files() and/or add_service_files() calls or remove the invocation of generate_messages().")
+message(STATUS "controller_motors: 0 messages, 0 services")
 
-set(MSG_I_FLAGS "-Icontroller_motors:/home/xavier/pid/HD_Ros/src/controller_motors/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,23 +19,12 @@ add_custom_target(controller_motors_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/xavier/pid/HD_Ros/src/controller_motors/msg/WheelVelocity.msg" NAME_WE)
-add_custom_target(_controller_motors_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "controller_motors" "/home/xavier/pid/HD_Ros/src/controller_motors/msg/WheelVelocity.msg" ""
-)
-
 #
 #  langs = gencpp;geneus;genlisp;gennodejs;genpy
 #
 
 ### Section generating for lang: gencpp
 ### Generating Messages
-_generate_msg_cpp(controller_motors
-  "/home/xavier/pid/HD_Ros/src/controller_motors/msg/WheelVelocity.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/controller_motors
-)
 
 ### Generating Services
 
@@ -49,8 +40,6 @@ add_custom_target(controller_motors_generate_messages_cpp
 add_dependencies(controller_motors_generate_messages controller_motors_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/xavier/pid/HD_Ros/src/controller_motors/msg/WheelVelocity.msg" NAME_WE)
-add_dependencies(controller_motors_generate_messages_cpp _controller_motors_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(controller_motors_gencpp)
@@ -61,12 +50,6 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS controller_motors_generate_messages
 
 ### Section generating for lang: geneus
 ### Generating Messages
-_generate_msg_eus(controller_motors
-  "/home/xavier/pid/HD_Ros/src/controller_motors/msg/WheelVelocity.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/controller_motors
-)
 
 ### Generating Services
 
@@ -82,8 +65,6 @@ add_custom_target(controller_motors_generate_messages_eus
 add_dependencies(controller_motors_generate_messages controller_motors_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/xavier/pid/HD_Ros/src/controller_motors/msg/WheelVelocity.msg" NAME_WE)
-add_dependencies(controller_motors_generate_messages_eus _controller_motors_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(controller_motors_geneus)
@@ -94,12 +75,6 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS controller_motors_generate_messages
 
 ### Section generating for lang: genlisp
 ### Generating Messages
-_generate_msg_lisp(controller_motors
-  "/home/xavier/pid/HD_Ros/src/controller_motors/msg/WheelVelocity.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/controller_motors
-)
 
 ### Generating Services
 
@@ -115,8 +90,6 @@ add_custom_target(controller_motors_generate_messages_lisp
 add_dependencies(controller_motors_generate_messages controller_motors_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/xavier/pid/HD_Ros/src/controller_motors/msg/WheelVelocity.msg" NAME_WE)
-add_dependencies(controller_motors_generate_messages_lisp _controller_motors_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(controller_motors_genlisp)
@@ -127,12 +100,6 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS controller_motors_generate_messages
 
 ### Section generating for lang: gennodejs
 ### Generating Messages
-_generate_msg_nodejs(controller_motors
-  "/home/xavier/pid/HD_Ros/src/controller_motors/msg/WheelVelocity.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/controller_motors
-)
 
 ### Generating Services
 
@@ -148,8 +115,6 @@ add_custom_target(controller_motors_generate_messages_nodejs
 add_dependencies(controller_motors_generate_messages controller_motors_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/xavier/pid/HD_Ros/src/controller_motors/msg/WheelVelocity.msg" NAME_WE)
-add_dependencies(controller_motors_generate_messages_nodejs _controller_motors_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(controller_motors_gennodejs)
@@ -160,12 +125,6 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS controller_motors_generate_messages
 
 ### Section generating for lang: genpy
 ### Generating Messages
-_generate_msg_py(controller_motors
-  "/home/xavier/pid/HD_Ros/src/controller_motors/msg/WheelVelocity.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/controller_motors
-)
 
 ### Generating Services
 
@@ -181,8 +140,6 @@ add_custom_target(controller_motors_generate_messages_py
 add_dependencies(controller_motors_generate_messages controller_motors_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/xavier/pid/HD_Ros/src/controller_motors/msg/WheelVelocity.msg" NAME_WE)
-add_dependencies(controller_motors_generate_messages_py _controller_motors_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(controller_motors_genpy)

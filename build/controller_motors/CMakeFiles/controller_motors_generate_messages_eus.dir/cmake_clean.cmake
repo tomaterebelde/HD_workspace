@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/controller_motors_generate_messages_eus"
-  "/home/xavier/pid/HD_Ros/devel/share/roseus/ros/controller_motors/msg/WheelVelocity.l"
-  "/home/xavier/pid/HD_Ros/devel/share/roseus/ros/controller_motors/manifest.l"
+  "/media/xplore/etienne_vol/Xplore/HD_workspace/devel/share/roseus/ros/controller_motors/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -67,14 +67,14 @@ set(controller_motors_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(controller_motors_SOURCE_PREFIX /home/xavier/pid/HD_Ros/src/controller_motors)
-  set(controller_motors_DEVEL_PREFIX /home/xavier/pid/HD_Ros/devel)
+  set(controller_motors_SOURCE_PREFIX /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors)
+  set(controller_motors_DEVEL_PREFIX /media/xplore/etienne_vol/Xplore/HD_workspace/devel)
   set(controller_motors_INSTALL_PREFIX "")
   set(controller_motors_PREFIX ${controller_motors_DEVEL_PREFIX})
 else()
   set(controller_motors_SOURCE_PREFIX "")
   set(controller_motors_DEVEL_PREFIX "")
-  set(controller_motors_INSTALL_PREFIX /home/xavier/pid/HD_Ros/install)
+  set(controller_motors_INSTALL_PREFIX /media/xplore/etienne_vol/Xplore/HD_workspace/install)
   set(controller_motors_PREFIX ${controller_motors_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(controller_motors_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "include " STREQUAL " ")
+if(NOT " " STREQUAL " ")
   set(controller_motors_INCLUDE_DIRS "")
-  set(_include_dirs "include")
+  set(_include_dirs "")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/xavier/pid/HD_Ros/install/lib;/opt/ros/melodic/lib)
+    foreach(path /media/xplore/etienne_vol/Xplore/HD_workspace/install/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

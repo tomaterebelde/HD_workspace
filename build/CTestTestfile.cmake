@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/xavier/pid/HD_Ros/src
-# Build directory: /home/xavier/pid/HD_Ros/build
+# Source directory: /media/xplore/etienne_vol/Xplore/HD_workspace/src
+# Build directory: /media/xplore/etienne_vol/Xplore/HD_workspace/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

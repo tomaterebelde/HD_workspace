@@ -1,4 +1,4 @@
-prefix=/home/xavier/pid/HD_Ros/install
+prefix=/media/xplore/etienne_vol/Xplore/HD_workspace/install
 
 Name: HD15
 Description: Description of HD15

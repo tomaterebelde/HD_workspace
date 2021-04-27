@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xavier/pid/HD_Ros/src
+CMAKE_SOURCE_DIR = /media/xplore/etienne_vol/Xplore/HD_workspace/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xavier/pid/HD_Ros/build
+CMAKE_BINARY_DIR = /media/xplore/etienne_vol/Xplore/HD_workspace/build
 
 # Utility rule file for rosgraph_msgs_generate_messages_cpp.
 
@@ -63,10 +63,10 @@ controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build: rosg
 .PHONY : controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 
 controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean:
-	cd /home/xavier/pid/HD_Ros/build/controller_motors && $(CMAKE_COMMAND) -P CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors && $(CMAKE_COMMAND) -P CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 
 controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend:
-	cd /home/xavier/pid/HD_Ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xavier/pid/HD_Ros/src /home/xavier/pid/HD_Ros/src/controller_motors /home/xavier/pid/HD_Ros/build /home/xavier/pid/HD_Ros/build/controller_motors /home/xavier/pid/HD_Ros/build/controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/xplore/etienne_vol/Xplore/HD_workspace/src /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors /media/xplore/etienne_vol/Xplore/HD_workspace/build /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend
 

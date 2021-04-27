@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(controller_motors)
+project(hd_controller_motors)
 
 
 find_package(catkin REQUIRED COMPONENTS
@@ -9,12 +9,6 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   message_filters
   message_generation
-)
-
-
-add_message_files(
-  FILES
-  WheelVelocity.msg
 )
 
 
@@ -41,13 +35,14 @@ include_directories(
 message(STATUS "DIR : --------->  ${PROJECT_SOURCE_DIR}")
 
 
-add_executable(controller_motors src/controller_motors_test.cpp)
+add_executable(hd_controller_motors src/driver_main.cpp)
 
-target_link_libraries(controller_motors ${catkin_LIBRARIES} 
+target_link_libraries(hd_controller_motors ${catkin_LIBRARIES} 
                       ${PROJECT_SOURCE_DIR}/lib/libethercatcpp-core_ethercatcpp-core.so 
                       ${PROJECT_SOURCE_DIR}/lib/libethercatcpp-epos_ethercatcpp-epos.so 
                       ${PROJECT_SOURCE_DIR}/lib/libpid-os-utilities_pid-signal-manager.so 
-                      ${PROJECT_SOURCE_DIR}/lib/libsoem.a )
+                      ${PROJECT_SOURCE_DIR}/lib/libsoem.a 
+		      ${PROJECT_SOURCE_DIR}/lib/libxcontrol_xcontrol.so)
 
-add_dependencies(controller_motors controller_motors_generate_messages_cpp)
+# add_dependencies(hd_controller_motors controller_motors_generate_messages_cpp)
 

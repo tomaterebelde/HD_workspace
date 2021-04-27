@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/xavier/pid/HD_Ros/src/Inverse_kinematics_robotic_arm/testarm/hd_ik_demo/src/move_group_hd.cpp
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/Inverse_kinematics_robotic_arm/testarm/hd_ik_demo/src/move_group_hd.cpp
 moveit/move_group_interface/move_group_interface.h
 -
 moveit/planning_scene_interface/planning_scene_interface.h

@@ -1,8 +1,8 @@
-# Install script for directory: /home/xavier/pid/HD_Ros/src/controller_motors
+# Install script for directory: /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/xavier/pid/HD_Ros/install")
+  set(CMAKE_INSTALL_PREFIX "/media/xplore/etienne_vol/Xplore/HD_workspace/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,53 +38,37 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/controller_motors/msg" TYPE FILE FILES "/home/xavier/pid/HD_Ros/src/controller_motors/msg/WheelVelocity.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hd_controller_motors/cmake" TYPE FILE FILES "/media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/catkin_generated/installspace/hd_controller_motors-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/controller_motors/cmake" TYPE FILE FILES "/home/xavier/pid/HD_Ros/build/controller_motors/catkin_generated/installspace/controller_motors-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/media/xplore/etienne_vol/Xplore/HD_workspace/devel/share/roseus/ros/hd_controller_motors")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/xavier/pid/HD_Ros/devel/include/controller_motors")
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/python2.7/dist-packages/hd_controller_motors")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/xavier/pid/HD_Ros/devel/share/roseus/ros/controller_motors")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/python2.7/dist-packages/hd_controller_motors")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/xavier/pid/HD_Ros/devel/share/common-lisp/ros/controller_motors")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/catkin_generated/installspace/hd_controller_motors.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/xavier/pid/HD_Ros/devel/share/gennodejs/ros/controller_motors")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hd_controller_motors/cmake" TYPE FILE FILES "/media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/catkin_generated/installspace/hd_controller_motors-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/xavier/pid/HD_Ros/devel/lib/python2.7/dist-packages/controller_motors")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/xavier/pid/HD_Ros/devel/lib/python2.7/dist-packages/controller_motors")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/xavier/pid/HD_Ros/build/controller_motors/catkin_generated/installspace/controller_motors.pc")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/controller_motors/cmake" TYPE FILE FILES "/home/xavier/pid/HD_Ros/build/controller_motors/catkin_generated/installspace/controller_motors-msg-extras.cmake")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/controller_motors/cmake" TYPE FILE FILES
-    "/home/xavier/pid/HD_Ros/build/controller_motors/catkin_generated/installspace/controller_motorsConfig.cmake"
-    "/home/xavier/pid/HD_Ros/build/controller_motors/catkin_generated/installspace/controller_motorsConfig-version.cmake"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hd_controller_motors/cmake" TYPE FILE FILES
+    "/media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/catkin_generated/installspace/hd_controller_motorsConfig.cmake"
+    "/media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/catkin_generated/installspace/hd_controller_motorsConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/controller_motors" TYPE FILE FILES "/home/xavier/pid/HD_Ros/src/controller_motors/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hd_controller_motors" TYPE FILE FILES "/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/package.xml")
 endif()
 

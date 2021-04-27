@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/xavier/pid/HD_Ros/src/Inverse_kinematics_robotic_arm/testarm/hd_mp/src/ik_demo.cpp
+/media/xplore/etienne_vol/Xplore/HD_workspace/src/Inverse_kinematics_robotic_arm/testarm/hd_mp/src/ik_demo.cpp
 ros/ros.h
 -
 moveit/robot_model_loader/robot_model_loader.h

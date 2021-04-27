@@ -1,8 +1,8 @@
-# Install script for directory: /home/xavier/pid/HD_Ros/src/Inverse_kinematics_robotic_arm/testarm/hd_ik_demo
+# Install script for directory: /media/xplore/etienne_vol/Xplore/HD_workspace/src/Inverse_kinematics_robotic_arm/testarm/hd_ik_demo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/xavier/pid/HD_Ros/install")
+  set(CMAKE_INSTALL_PREFIX "/media/xplore/etienne_vol/Xplore/HD_workspace/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,18 +38,18 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/xavier/pid/HD_Ros/build/Inverse_kinematics_robotic_arm/testarm/hd_ik_demo/catkin_generated/installspace/hd_ik_demo.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/media/xplore/etienne_vol/Xplore/HD_workspace/build/Inverse_kinematics_robotic_arm/testarm/hd_ik_demo/catkin_generated/installspace/hd_ik_demo.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hd_ik_demo/cmake" TYPE FILE FILES
-    "/home/xavier/pid/HD_Ros/build/Inverse_kinematics_robotic_arm/testarm/hd_ik_demo/catkin_generated/installspace/hd_ik_demoConfig.cmake"
-    "/home/xavier/pid/HD_Ros/build/Inverse_kinematics_robotic_arm/testarm/hd_ik_demo/catkin_generated/installspace/hd_ik_demoConfig-version.cmake"
+    "/media/xplore/etienne_vol/Xplore/HD_workspace/build/Inverse_kinematics_robotic_arm/testarm/hd_ik_demo/catkin_generated/installspace/hd_ik_demoConfig.cmake"
+    "/media/xplore/etienne_vol/Xplore/HD_workspace/build/Inverse_kinematics_robotic_arm/testarm/hd_ik_demo/catkin_generated/installspace/hd_ik_demoConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hd_ik_demo" TYPE FILE FILES "/home/xavier/pid/HD_Ros/src/Inverse_kinematics_robotic_arm/testarm/hd_ik_demo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hd_ik_demo" TYPE FILE FILES "/media/xplore/etienne_vol/Xplore/HD_workspace/src/Inverse_kinematics_robotic_arm/testarm/hd_ik_demo/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -59,7 +59,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/hd_ik_demo/move_group_hd"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/hd_ik_demo" TYPE EXECUTABLE FILES "/home/xavier/pid/HD_Ros/devel/lib/hd_ik_demo/move_group_hd")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/hd_ik_demo" TYPE EXECUTABLE FILES "/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/hd_ik_demo/move_group_hd")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/hd_ik_demo/move_group_hd" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/hd_ik_demo/move_group_hd")
     file(RPATH_CHANGE
@@ -73,6 +73,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hd_ik_demo" TYPE DIRECTORY FILES "/home/xavier/pid/HD_Ros/src/Inverse_kinematics_robotic_arm/testarm/hd_ik_demo/launch" REGEX "/setup\\_assistant\\.launch$" EXCLUDE)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hd_ik_demo" TYPE DIRECTORY FILES "/media/xplore/etienne_vol/Xplore/HD_workspace/src/Inverse_kinematics_robotic_arm/testarm/hd_ik_demo/launch" REGEX "/setup\\_assistant\\.launch$" EXCLUDE)
 endif()
 

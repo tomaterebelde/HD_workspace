@@ -1,4 +1,4 @@
-prefix=/home/xavier/pid/HD_Ros/devel
+prefix=/media/xplore/etienne_vol/Xplore/HD_workspace/devel
 
 Name: hd_ik_cmd
 Description: Description of hd_ik_cmd

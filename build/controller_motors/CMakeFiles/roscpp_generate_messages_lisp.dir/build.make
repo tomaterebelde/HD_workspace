@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xavier/pid/HD_Ros/src
+CMAKE_SOURCE_DIR = /media/xplore/etienne_vol/Xplore/HD_workspace/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xavier/pid/HD_Ros/build
+CMAKE_BINARY_DIR = /media/xplore/etienne_vol/Xplore/HD_workspace/build
 
 # Utility rule file for roscpp_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ controller_motors/CMakeFiles/roscpp_generate_messages_lisp.dir/build: roscpp_gen
 .PHONY : controller_motors/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 
 controller_motors/CMakeFiles/roscpp_generate_messages_lisp.dir/clean:
-	cd /home/xavier/pid/HD_Ros/build/controller_motors && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : controller_motors/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
 
 controller_motors/CMakeFiles/roscpp_generate_messages_lisp.dir/depend:
-	cd /home/xavier/pid/HD_Ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xavier/pid/HD_Ros/src /home/xavier/pid/HD_Ros/src/controller_motors /home/xavier/pid/HD_Ros/build /home/xavier/pid/HD_Ros/build/controller_motors /home/xavier/pid/HD_Ros/build/controller_motors/CMakeFiles/roscpp_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/xplore/etienne_vol/Xplore/HD_workspace/src /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors /media/xplore/etienne_vol/Xplore/HD_workspace/build /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/CMakeFiles/roscpp_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : controller_motors/CMakeFiles/roscpp_generate_messages_lisp.dir/depend
 

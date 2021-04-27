@@ -67,14 +67,14 @@ set(hd_ik_cmd_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(hd_ik_cmd_SOURCE_PREFIX /home/xavier/pid/HD_Ros/src/Inverse_kinematics_robotic_arm/testarm/hd_ik_cmd)
-  set(hd_ik_cmd_DEVEL_PREFIX /home/xavier/pid/HD_Ros/devel)
+  set(hd_ik_cmd_SOURCE_PREFIX /media/xplore/etienne_vol/Xplore/HD_workspace/src/Inverse_kinematics_robotic_arm/testarm/hd_ik_cmd)
+  set(hd_ik_cmd_DEVEL_PREFIX /media/xplore/etienne_vol/Xplore/HD_workspace/devel)
   set(hd_ik_cmd_INSTALL_PREFIX "")
   set(hd_ik_cmd_PREFIX ${hd_ik_cmd_DEVEL_PREFIX})
 else()
   set(hd_ik_cmd_SOURCE_PREFIX "")
   set(hd_ik_cmd_DEVEL_PREFIX "")
-  set(hd_ik_cmd_INSTALL_PREFIX /home/xavier/pid/HD_Ros/install)
+  set(hd_ik_cmd_INSTALL_PREFIX /media/xplore/etienne_vol/Xplore/HD_workspace/install)
   set(hd_ik_cmd_PREFIX ${hd_ik_cmd_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/xavier/pid/HD_Ros/install/lib;/opt/ros/melodic/lib)
+    foreach(path /media/xplore/etienne_vol/Xplore/HD_workspace/install/lib;/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

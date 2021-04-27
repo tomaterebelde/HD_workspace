@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xavier/pid/HD_Ros/src
+CMAKE_SOURCE_DIR = /media/xplore/etienne_vol/Xplore/HD_workspace/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xavier/pid/HD_Ros/build
+CMAKE_BINARY_DIR = /media/xplore/etienne_vol/Xplore/HD_workspace/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xavier/pid/HD_Ros/build/CMakeFiles /home/xavier/pid/HD_Ros/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles /media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xavier/pid/HD_Ros/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -298,30 +298,17 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
-# Target rules for targets named controller_motors
+# Target rules for targets named hd_controller_motors
 
 # Build rule for target.
-controller_motors: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors
-.PHONY : controller_motors
+hd_controller_motors: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hd_controller_motors
+.PHONY : hd_controller_motors
 
 # fast build rule for target.
-controller_motors/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/controller_motors.dir/build.make controller_motors/CMakeFiles/controller_motors.dir/build
-.PHONY : controller_motors/fast
-
-#=============================================================================
-# Target rules for targets named controller_motors_genpy
-
-# Build rule for target.
-controller_motors_genpy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors_genpy
-.PHONY : controller_motors_genpy
-
-# fast build rule for target.
-controller_motors_genpy/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/controller_motors_genpy.dir/build.make controller_motors/CMakeFiles/controller_motors_genpy.dir/build
-.PHONY : controller_motors_genpy/fast
+hd_controller_motors/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors.dir/build.make controller_motors/CMakeFiles/hd_controller_motors.dir/build
+.PHONY : hd_controller_motors/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_py
@@ -363,19 +350,6 @@ std_msgs_generate_messages_eus/fast:
 .PHONY : std_msgs_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_py
-
-# Build rule for target.
-rosgraph_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_py
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -389,43 +363,17 @@ rosgraph_msgs_generate_messages_nodejs/fast:
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named std_msgs_generate_messages_cpp
+# Target rules for targets named hd_controller_motors_generate_messages_lisp
 
 # Build rule for target.
-std_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_cpp
-.PHONY : std_msgs_generate_messages_cpp
+hd_controller_motors_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hd_controller_motors_generate_messages_lisp
+.PHONY : hd_controller_motors_generate_messages_lisp
 
 # fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make controller_motors/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_lisp
-
-# Build rule for target.
-rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_lisp
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named controller_motors_generate_messages_nodejs
-
-# Build rule for target.
-controller_motors_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors_generate_messages_nodejs
-.PHONY : controller_motors_generate_messages_nodejs
-
-# fast build rule for target.
-controller_motors_generate_messages_nodejs/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/controller_motors_generate_messages_nodejs.dir/build.make controller_motors/CMakeFiles/controller_motors_generate_messages_nodejs.dir/build
-.PHONY : controller_motors_generate_messages_nodejs/fast
+hd_controller_motors_generate_messages_lisp/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_generate_messages_lisp.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_generate_messages_lisp.dir/build
+.PHONY : hd_controller_motors_generate_messages_lisp/fast
 
 #=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_eus
@@ -491,6 +439,19 @@ rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
 rosgraph_msgs_generate_messages_cpp/fast:
 	$(MAKE) -f controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named hd_controller_motors_genpy
+
+# Build rule for target.
+hd_controller_motors_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hd_controller_motors_genpy
+.PHONY : hd_controller_motors_genpy
+
+# fast build rule for target.
+hd_controller_motors_genpy/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_genpy.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_genpy.dir/build
+.PHONY : hd_controller_motors_genpy/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_nodejs
@@ -597,30 +558,17 @@ sensor_msgs_generate_messages_nodejs/fast:
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named controller_motors_generate_messages_cpp
+# Target rules for targets named hd_controller_motors_generate_messages_nodejs
 
 # Build rule for target.
-controller_motors_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors_generate_messages_cpp
-.PHONY : controller_motors_generate_messages_cpp
+hd_controller_motors_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hd_controller_motors_generate_messages_nodejs
+.PHONY : hd_controller_motors_generate_messages_nodejs
 
 # fast build rule for target.
-controller_motors_generate_messages_cpp/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/controller_motors_generate_messages_cpp.dir/build.make controller_motors/CMakeFiles/controller_motors_generate_messages_cpp.dir/build
-.PHONY : controller_motors_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named controller_motors_gencpp
-
-# Build rule for target.
-controller_motors_gencpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors_gencpp
-.PHONY : controller_motors_gencpp
-
-# fast build rule for target.
-controller_motors_gencpp/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/controller_motors_gencpp.dir/build.make controller_motors/CMakeFiles/controller_motors_gencpp.dir/build
-.PHONY : controller_motors_gencpp/fast
+hd_controller_motors_generate_messages_nodejs/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_generate_messages_nodejs.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_generate_messages_nodejs.dir/build
+.PHONY : hd_controller_motors_generate_messages_nodejs/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_py
@@ -636,43 +584,30 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named controller_motors_generate_messages
+# Target rules for targets named std_msgs_generate_messages_cpp
 
 # Build rule for target.
-controller_motors_generate_messages: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors_generate_messages
-.PHONY : controller_motors_generate_messages
+std_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_cpp
+.PHONY : std_msgs_generate_messages_cpp
 
 # fast build rule for target.
-controller_motors_generate_messages/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/controller_motors_generate_messages.dir/build.make controller_motors/CMakeFiles/controller_motors_generate_messages.dir/build
-.PHONY : controller_motors_generate_messages/fast
+std_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make controller_motors/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+.PHONY : std_msgs_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named roscpp_generate_messages_lisp
+# Target rules for targets named hd_controller_motors_generate_messages_cpp
 
 # Build rule for target.
-roscpp_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_lisp
-.PHONY : roscpp_generate_messages_lisp
+hd_controller_motors_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hd_controller_motors_generate_messages_cpp
+.PHONY : hd_controller_motors_generate_messages_cpp
 
 # fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make controller_motors/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named controller_motors_gennodejs
-
-# Build rule for target.
-controller_motors_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors_gennodejs
-.PHONY : controller_motors_gennodejs
-
-# fast build rule for target.
-controller_motors_gennodejs/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/controller_motors_gennodejs.dir/build.make controller_motors/CMakeFiles/controller_motors_gennodejs.dir/build
-.PHONY : controller_motors_gennodejs/fast
+hd_controller_motors_generate_messages_cpp/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_generate_messages_cpp.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_generate_messages_cpp.dir/build
+.PHONY : hd_controller_motors_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_cpp
@@ -714,82 +649,134 @@ geometry_msgs_generate_messages_py/fast:
 .PHONY : geometry_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named controller_motors_genlisp
+# Target rules for targets named hd_controller_motors_generate_messages
 
 # Build rule for target.
-controller_motors_genlisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors_genlisp
-.PHONY : controller_motors_genlisp
+hd_controller_motors_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hd_controller_motors_generate_messages
+.PHONY : hd_controller_motors_generate_messages
 
 # fast build rule for target.
-controller_motors_genlisp/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/controller_motors_genlisp.dir/build.make controller_motors/CMakeFiles/controller_motors_genlisp.dir/build
-.PHONY : controller_motors_genlisp/fast
+hd_controller_motors_generate_messages/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_generate_messages.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_generate_messages.dir/build
+.PHONY : hd_controller_motors_generate_messages/fast
 
 #=============================================================================
-# Target rules for targets named _controller_motors_generate_messages_check_deps_WheelVelocity
+# Target rules for targets named hd_controller_motors_gencpp
 
 # Build rule for target.
-_controller_motors_generate_messages_check_deps_WheelVelocity: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _controller_motors_generate_messages_check_deps_WheelVelocity
-.PHONY : _controller_motors_generate_messages_check_deps_WheelVelocity
+hd_controller_motors_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hd_controller_motors_gencpp
+.PHONY : hd_controller_motors_gencpp
 
 # fast build rule for target.
-_controller_motors_generate_messages_check_deps_WheelVelocity/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/_controller_motors_generate_messages_check_deps_WheelVelocity.dir/build.make controller_motors/CMakeFiles/_controller_motors_generate_messages_check_deps_WheelVelocity.dir/build
-.PHONY : _controller_motors_generate_messages_check_deps_WheelVelocity/fast
+hd_controller_motors_gencpp/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_gencpp.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_gencpp.dir/build
+.PHONY : hd_controller_motors_gencpp/fast
 
 #=============================================================================
-# Target rules for targets named controller_motors_generate_messages_py
+# Target rules for targets named hd_controller_motors_generate_messages_eus
 
 # Build rule for target.
-controller_motors_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors_generate_messages_py
-.PHONY : controller_motors_generate_messages_py
+hd_controller_motors_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hd_controller_motors_generate_messages_eus
+.PHONY : hd_controller_motors_generate_messages_eus
 
 # fast build rule for target.
-controller_motors_generate_messages_py/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/controller_motors_generate_messages_py.dir/build.make controller_motors/CMakeFiles/controller_motors_generate_messages_py.dir/build
-.PHONY : controller_motors_generate_messages_py/fast
+hd_controller_motors_generate_messages_eus/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_generate_messages_eus.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_generate_messages_eus.dir/build
+.PHONY : hd_controller_motors_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named controller_motors_geneus
+# Target rules for targets named hd_controller_motors_geneus
 
 # Build rule for target.
-controller_motors_geneus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors_geneus
-.PHONY : controller_motors_geneus
+hd_controller_motors_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hd_controller_motors_geneus
+.PHONY : hd_controller_motors_geneus
 
 # fast build rule for target.
-controller_motors_geneus/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/controller_motors_geneus.dir/build.make controller_motors/CMakeFiles/controller_motors_geneus.dir/build
-.PHONY : controller_motors_geneus/fast
+hd_controller_motors_geneus/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_geneus.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_geneus.dir/build
+.PHONY : hd_controller_motors_geneus/fast
 
 #=============================================================================
-# Target rules for targets named controller_motors_generate_messages_eus
+# Target rules for targets named roscpp_generate_messages_lisp
 
 # Build rule for target.
-controller_motors_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors_generate_messages_eus
-.PHONY : controller_motors_generate_messages_eus
+roscpp_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_lisp
+.PHONY : roscpp_generate_messages_lisp
 
 # fast build rule for target.
-controller_motors_generate_messages_eus/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/controller_motors_generate_messages_eus.dir/build.make controller_motors/CMakeFiles/controller_motors_generate_messages_eus.dir/build
-.PHONY : controller_motors_generate_messages_eus/fast
+roscpp_generate_messages_lisp/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make controller_motors/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+.PHONY : roscpp_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named controller_motors_generate_messages_lisp
+# Target rules for targets named hd_controller_motors_genlisp
 
 # Build rule for target.
-controller_motors_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors_generate_messages_lisp
-.PHONY : controller_motors_generate_messages_lisp
+hd_controller_motors_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hd_controller_motors_genlisp
+.PHONY : hd_controller_motors_genlisp
 
 # fast build rule for target.
-controller_motors_generate_messages_lisp/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/controller_motors_generate_messages_lisp.dir/build.make controller_motors/CMakeFiles/controller_motors_generate_messages_lisp.dir/build
-.PHONY : controller_motors_generate_messages_lisp/fast
+hd_controller_motors_genlisp/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_genlisp.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_genlisp.dir/build
+.PHONY : hd_controller_motors_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named rosgraph_msgs_generate_messages_py
+
+# Build rule for target.
+rosgraph_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_py
+.PHONY : rosgraph_msgs_generate_messages_py
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_py/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+.PHONY : rosgraph_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named hd_controller_motors_gennodejs
+
+# Build rule for target.
+hd_controller_motors_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hd_controller_motors_gennodejs
+.PHONY : hd_controller_motors_gennodejs
+
+# fast build rule for target.
+hd_controller_motors_gennodejs/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_gennodejs.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_gennodejs.dir/build
+.PHONY : hd_controller_motors_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named rosgraph_msgs_generate_messages_lisp
+
+# Build rule for target.
+rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_lisp
+.PHONY : rosgraph_msgs_generate_messages_lisp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named hd_controller_motors_generate_messages_py
+
+# Build rule for target.
+hd_controller_motors_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hd_controller_motors_generate_messages_py
+.PHONY : hd_controller_motors_generate_messages_py
+
+# fast build rule for target.
+hd_controller_motors_generate_messages_py/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_generate_messages_py.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_generate_messages_py.dir/build
+.PHONY : hd_controller_motors_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named graph_msgs_generate_messages_py
@@ -1737,21 +1724,18 @@ help:
 	@echo "... gtest_main"
 	@echo "... gtest"
 	@echo "... _catkin_empty_exported_target"
-	@echo "... controller_motors"
-	@echo "... controller_motors_genpy"
+	@echo "... hd_controller_motors"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... controller_motors_generate_messages_nodejs"
+	@echo "... hd_controller_motors_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... hd_controller_motors_genpy"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... roscpp_generate_messages_nodejs"
@@ -1760,21 +1744,23 @@ help:
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... controller_motors_generate_messages_cpp"
-	@echo "... controller_motors_gencpp"
+	@echo "... hd_controller_motors_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... controller_motors_generate_messages"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... controller_motors_gennodejs"
+	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... hd_controller_motors_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... controller_motors_genlisp"
-	@echo "... _controller_motors_generate_messages_check_deps_WheelVelocity"
-	@echo "... controller_motors_generate_messages_py"
-	@echo "... controller_motors_geneus"
-	@echo "... controller_motors_generate_messages_eus"
-	@echo "... controller_motors_generate_messages_lisp"
+	@echo "... hd_controller_motors_generate_messages"
+	@echo "... hd_controller_motors_gencpp"
+	@echo "... hd_controller_motors_generate_messages_eus"
+	@echo "... hd_controller_motors_geneus"
+	@echo "... roscpp_generate_messages_lisp"
+	@echo "... hd_controller_motors_genlisp"
+	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... hd_controller_motors_gennodejs"
+	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... hd_controller_motors_generate_messages_py"
 	@echo "... graph_msgs_generate_messages_py"
 	@echo "... graph_msgs_generate_messages_lisp"
 	@echo "... graph_msgs_generate_messages_eus"

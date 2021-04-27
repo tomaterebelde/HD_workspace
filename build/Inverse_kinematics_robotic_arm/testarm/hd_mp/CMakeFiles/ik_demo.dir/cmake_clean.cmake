@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ik_demo.dir/src/ik_demo.cpp.o"
-  "/home/xavier/pid/HD_Ros/devel/lib/hd_mp/ik_demo.pdb"
-  "/home/xavier/pid/HD_Ros/devel/lib/hd_mp/ik_demo"
+  "/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/hd_mp/ik_demo.pdb"
+  "/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/hd_mp/ik_demo"
 )
 
 # Per-language clean rules from dependency scanning.

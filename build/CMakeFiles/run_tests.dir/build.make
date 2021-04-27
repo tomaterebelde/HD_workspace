@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xavier/pid/HD_Ros/src
+CMAKE_SOURCE_DIR = /media/xplore/etienne_vol/Xplore/HD_workspace/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xavier/pid/HD_Ros/build
+CMAKE_BINARY_DIR = /media/xplore/etienne_vol/Xplore/HD_workspace/build
 
 # Utility rule file for run_tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 CMakeFiles/run_tests.dir/depend:
-	cd /home/xavier/pid/HD_Ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xavier/pid/HD_Ros/src /home/xavier/pid/HD_Ros/src /home/xavier/pid/HD_Ros/build /home/xavier/pid/HD_Ros/build /home/xavier/pid/HD_Ros/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/xplore/etienne_vol/Xplore/HD_workspace/src /media/xplore/etienne_vol/Xplore/HD_workspace/src /media/xplore/etienne_vol/Xplore/HD_workspace/build /media/xplore/etienne_vol/Xplore/HD_workspace/build /media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_tests.dir/depend
 

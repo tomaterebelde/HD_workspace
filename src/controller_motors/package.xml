@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>controller_motors</name>
+  <name>hd_controller_motors</name>
   <version>0.0.0</version>
-  <description>The controller_motors package</description>
+  <description>The hd_controller_motors package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
