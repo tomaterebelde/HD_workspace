@@ -12,3 +12,18 @@ sudo apt-get install ros-melodic-moveit
 sudo apt-get install ros-melodic-moveit-visual-tools
 sudo apt-get install ros-melodic-rviz-visual-tools
 ```
+
+# To run the driver node
+
+```bash
+cd <workspace>
+catkin_make
+```
+
+In another terminal, type
+```bash
+sudo -i
+cd <workspace>
+source devel/setup.sh
+rosrun hd_controller_motors hd_controller_motors
+```

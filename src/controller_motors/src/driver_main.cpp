@@ -1,4 +1,5 @@
 #include <sensor_msgs/JointState.h>
+#include <std_msgs/Float32.h>
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include <string>
@@ -31,7 +32,12 @@ Epos4::control_mode_t control_mode;
 std::string network_interface_name;
 double target_value[6] = {0, 0, 0, 0, 0, 0};
 
-static const int period = 200; // [ms]  1ms does not work
+static const int period = 1; // [ms]
+
+void position_generator_callback(const std_msgs::Float32::ConstPtr& msg) {
+	cout << "target value modified\n";
+	target_value[0] = msg->data;
+}
 
 void inverse_kinematics_callback(const sensor_msgs::JointState::ConstPtr& msg){
 	/*
@@ -55,14 +61,20 @@ int main(int argc, char **argv){
 	ros::NodeHandle n;
 	// ros::Subscriber sub = n.subscribe<sensor_msgs::JoinState>("TOPIC NAME", 10, inverse_kinematics_callback);
 
+	ros::Subscriber sub = n.subscribe<std_msgs::Float32>("motor_position_generator", 10, position_generator_callback);
+
 	cout << "ROS node initialized" << endl;
 
 	network_interface_name = "eth1";
-	std::string input_control_mode = "cyclic_velocity";
-	std::string input_target = "1000";
+	std::string input_target = "0";
 	for(size_t i=0; i<3; i++) {
 		target_value[i] = atof(input_target.c_str());
 	}
+
+	// control_mode = Epos4::position_CSP;
+    // control_mode = Epos4::velocity_CSV;
+    // control_mode = Epos4::torque_CST;
+    control_mode = Epos4::profile_position_PPM;
 
   	// Device definition
 	xcontrol::OneAxisSlot epos_1(true);
@@ -84,7 +96,6 @@ int main(int argc, char **argv){
 		ethercat_master.switch_motors_to_enable_op();
 
 		for(size_t it=0; it<chain.size(); ++it) {
-			cout << "Does it go here?\n";
 			chain[it]->set_Control_Mode(control_mode);
 
 			if (chain[it]->get_Device_State_In_String() == "Operation enable") {
@@ -107,7 +118,7 @@ int main(int argc, char **argv){
 					// normal mode (not in endless)
 					chain[it]->active_Endless_Movement(false);
 
-					//epos.active_Absolute_Positionning();
+					// chain[it]->active_Absolute_Positionning();
 					chain[it]->active_Relative_Positionning();
 
 					if (!(chain[it]->get_Device_State_In_String() == "Operation enable")) {
@@ -130,6 +141,8 @@ int main(int argc, char **argv){
 				cout << "State device : " << epos->get_Device_State_In_String() << "\n";
 				cout << "Control mode = " << epos->get_Control_Mode_In_String() << "\n";
 
+				cout << "Actual position : " << std::dec <<epos->get_Actual_Position_In_Qc() << " qc" << "\n";
+
 				// Specific for PPM mode
 				if (control_mode == Epos4::profile_position_PPM){
 					cout << "Target is reached : " << epos->check_target_reached() << "\n";
@@ -150,7 +163,6 @@ int main(int argc, char **argv){
 		high_resolution_clock::time_point time_point_after_sleep_loop = high_resolution_clock::now();
 		duration<double> time_duration_loop_after_sleep = duration_cast<duration<double>>(time_point_after_sleep_loop - time_point_start_loop);
 		std::cout << "Time loop after sleep = " << time_duration_loop_after_sleep.count() << " seconds.\n";
-
 
 		cout << "\n\n\n" << endl;
 	}  

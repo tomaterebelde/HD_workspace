@@ -7,4 +7,10 @@
 # new environment variables
 
 # modified environment variables
+export CMAKE_PREFIX_PATH="/media/xplore/etienne_vol/Xplore/HD_workspace/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/media/xplore/etienne_vol/Xplore/HD_workspace/build'
+export PYTHONPATH="/media/xplore/etienne_vol/Xplore/HD_workspace/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES='/media/xplore/etienne_vol/Xplore/HD_workspace/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/media/xplore/etienne_vol/Xplore/HD_workspace/src:$ROS_PACKAGE_PATH"

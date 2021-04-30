@@ -168,19 +168,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-controller_motors/CMakeFiles/hd_controller_motors.dir/rule:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/hd_controller_motors.dir/rule
-.PHONY : controller_motors/CMakeFiles/hd_controller_motors.dir/rule
+controller_motors/CMakeFiles/position_generator.dir/rule:
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/position_generator.dir/rule
+.PHONY : controller_motors/CMakeFiles/position_generator.dir/rule
 
 # Convenience name for target.
-hd_controller_motors: controller_motors/CMakeFiles/hd_controller_motors.dir/rule
+position_generator: controller_motors/CMakeFiles/position_generator.dir/rule
 
-.PHONY : hd_controller_motors
+.PHONY : position_generator
 
 # fast build rule for target.
-hd_controller_motors/fast:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors.dir/build.make controller_motors/CMakeFiles/hd_controller_motors.dir/build
-.PHONY : hd_controller_motors/fast
+position_generator/fast:
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/position_generator.dir/build.make controller_motors/CMakeFiles/position_generator.dir/build
+.PHONY : position_generator/fast
 
 # Convenience name for target.
 controller_motors/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
@@ -196,6 +196,21 @@ std_msgs_generate_messages_py: controller_motors/CMakeFiles/std_msgs_generate_me
 std_msgs_generate_messages_py/fast:
 	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/std_msgs_generate_messages_py.dir/build.make controller_motors/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+controller_motors/CMakeFiles/driver_main.dir/rule:
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/driver_main.dir/rule
+.PHONY : controller_motors/CMakeFiles/driver_main.dir/rule
+
+# Convenience name for target.
+driver_main: controller_motors/CMakeFiles/driver_main.dir/rule
+
+.PHONY : driver_main
+
+# fast build rule for target.
+driver_main/fast:
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/driver_main.dir/build.make controller_motors/CMakeFiles/driver_main.dir/build
+.PHONY : driver_main/fast
 
 # Convenience name for target.
 controller_motors/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
@@ -728,7 +743,7 @@ src/driver_main.o: src/driver_main.cpp.o
 
 # target to build an object file
 src/driver_main.cpp.o:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors.dir/build.make controller_motors/CMakeFiles/hd_controller_motors.dir/src/driver_main.cpp.o
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/driver_main.dir/build.make controller_motors/CMakeFiles/driver_main.dir/src/driver_main.cpp.o
 .PHONY : src/driver_main.cpp.o
 
 src/driver_main.i: src/driver_main.cpp.i
@@ -737,7 +752,7 @@ src/driver_main.i: src/driver_main.cpp.i
 
 # target to preprocess a source file
 src/driver_main.cpp.i:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors.dir/build.make controller_motors/CMakeFiles/hd_controller_motors.dir/src/driver_main.cpp.i
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/driver_main.dir/build.make controller_motors/CMakeFiles/driver_main.dir/src/driver_main.cpp.i
 .PHONY : src/driver_main.cpp.i
 
 src/driver_main.s: src/driver_main.cpp.s
@@ -746,8 +761,35 @@ src/driver_main.s: src/driver_main.cpp.s
 
 # target to generate assembly for a file
 src/driver_main.cpp.s:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors.dir/build.make controller_motors/CMakeFiles/hd_controller_motors.dir/src/driver_main.cpp.s
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/driver_main.dir/build.make controller_motors/CMakeFiles/driver_main.dir/src/driver_main.cpp.s
 .PHONY : src/driver_main.cpp.s
+
+src/position_generator.o: src/position_generator.cpp.o
+
+.PHONY : src/position_generator.o
+
+# target to build an object file
+src/position_generator.cpp.o:
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/position_generator.dir/build.make controller_motors/CMakeFiles/position_generator.dir/src/position_generator.cpp.o
+.PHONY : src/position_generator.cpp.o
+
+src/position_generator.i: src/position_generator.cpp.i
+
+.PHONY : src/position_generator.i
+
+# target to preprocess a source file
+src/position_generator.cpp.i:
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/position_generator.dir/build.make controller_motors/CMakeFiles/position_generator.dir/src/position_generator.cpp.i
+.PHONY : src/position_generator.cpp.i
+
+src/position_generator.s: src/position_generator.cpp.s
+
+.PHONY : src/position_generator.s
+
+# target to generate assembly for a file
+src/position_generator.cpp.s:
+	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/position_generator.dir/build.make controller_motors/CMakeFiles/position_generator.dir/src/position_generator.cpp.s
+.PHONY : src/position_generator.cpp.s
 
 # Help Target
 help:
@@ -760,8 +802,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... hd_controller_motors"
+	@echo "... position_generator"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... driver_main"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
@@ -802,6 +845,9 @@ help:
 	@echo "... src/driver_main.o"
 	@echo "... src/driver_main.i"
 	@echo "... src/driver_main.s"
+	@echo "... src/position_generator.o"
+	@echo "... src/position_generator.i"
+	@echo "... src/position_generator.s"
 .PHONY : help
 
 

@@ -35,14 +35,15 @@ include_directories(
 message(STATUS "DIR : --------->  ${PROJECT_SOURCE_DIR}")
 
 
-add_executable(hd_controller_motors src/driver_main.cpp)
+add_executable(driver_main src/driver_main.cpp)
+add_executable(position_generator src/position_generator.cpp)
 
-target_link_libraries(hd_controller_motors ${catkin_LIBRARIES} 
+target_link_libraries(driver_main ${catkin_LIBRARIES} 
                       ${PROJECT_SOURCE_DIR}/lib/libethercatcpp-core_ethercatcpp-core.so 
                       ${PROJECT_SOURCE_DIR}/lib/libethercatcpp-epos_ethercatcpp-epos.so 
                       ${PROJECT_SOURCE_DIR}/lib/libpid-os-utilities_pid-signal-manager.so 
                       ${PROJECT_SOURCE_DIR}/lib/libsoem.a 
 		      ${PROJECT_SOURCE_DIR}/lib/libxcontrol_xcontrol.so)
 
-# add_dependencies(hd_controller_motors controller_motors_generate_messages_cpp)
+target_link_libraries(position_generator ${catkin_LIBRARIES})
 

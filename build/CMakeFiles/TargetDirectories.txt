@@ -48,8 +48,9 @@
 /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/CMakeFiles/list_install_components.dir
 /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/CMakeFiles/edit_cache.dir
 /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/CMakeFiles/test.dir
-/media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/CMakeFiles/hd_controller_motors.dir
+/media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/CMakeFiles/position_generator.dir
 /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/CMakeFiles/std_msgs_generate_messages_py.dir
+/media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/CMakeFiles/driver_main.dir
 /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/CMakeFiles/std_msgs_generate_messages_nodejs.dir
 /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/CMakeFiles/std_msgs_generate_messages_eus.dir
 /media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir

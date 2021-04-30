@@ -298,17 +298,17 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
-# Target rules for targets named hd_controller_motors
+# Target rules for targets named position_generator
 
 # Build rule for target.
-hd_controller_motors: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hd_controller_motors
-.PHONY : hd_controller_motors
+position_generator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 position_generator
+.PHONY : position_generator
 
 # fast build rule for target.
-hd_controller_motors/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors.dir/build.make controller_motors/CMakeFiles/hd_controller_motors.dir/build
-.PHONY : hd_controller_motors/fast
+position_generator/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/position_generator.dir/build.make controller_motors/CMakeFiles/position_generator.dir/build
+.PHONY : position_generator/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_py
@@ -322,6 +322,19 @@ std_msgs_generate_messages_py: cmake_check_build_system
 std_msgs_generate_messages_py/fast:
 	$(MAKE) -f controller_motors/CMakeFiles/std_msgs_generate_messages_py.dir/build.make controller_motors/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named driver_main
+
+# Build rule for target.
+driver_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 driver_main
+.PHONY : driver_main
+
+# fast build rule for target.
+driver_main/fast:
+	$(MAKE) -f controller_motors/CMakeFiles/driver_main.dir/build.make controller_motors/CMakeFiles/driver_main.dir/build
+.PHONY : driver_main/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_nodejs
@@ -1724,8 +1737,9 @@ help:
 	@echo "... gtest_main"
 	@echo "... gtest"
 	@echo "... _catkin_empty_exported_target"
-	@echo "... hd_controller_motors"
+	@echo "... position_generator"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... driver_main"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
