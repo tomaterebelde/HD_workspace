@@ -116,6 +116,9 @@ namespace ethercatcpp {
         */
         void wait_Period();
 
+        void manage_Ethercat_Error();      // Manage ethercat bus error (print error explicitly)
+
+
 
       private:
 
@@ -141,8 +144,6 @@ namespace ethercatcpp {
         void forced_Slave_To_PreOp_State();// Force slave to PRE-OP State
         void init_Slaves();                // init steps for slaves
         void end_Slaves();                 // end steps for slaves
-
-        void manage_Ethercat_Error();      // Manage ethercat bus error (print error explicitly)
 
 
 

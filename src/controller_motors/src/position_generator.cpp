@@ -17,9 +17,9 @@
 using namespace std;
 using namespace std::chrono;
 
-static const int rate = 100; // [1/ms]
+static const int rate = 1000; // [1/ms]
 
-static const double sin_period = 1000.0;
+static const double sin_demi_period = rate;
 static const double sin_amplitude = 100000.0;
 
 #define PI 3.14159265
@@ -37,7 +37,7 @@ int main(int argc, char **argv){
     while (ros::ok())
     {
         std_msgs::Float32 msg;
-        msg.data = sin_amplitude * sin(PI * (count / sin_period));
+        msg.data = sin_amplitude * sin(PI * (count / sin_demi_period));
 
         position_generator_pub.publish(msg);
 

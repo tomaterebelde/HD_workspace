@@ -25,5 +25,6 @@ In another terminal, type
 sudo -i
 cd <workspace>
 source devel/setup.sh
-rosrun hd_controller_motors hd_controller_motors
+rosrun hd_controller_motors driver_main
+rosrun hd_controller_motors position_generator
 ```

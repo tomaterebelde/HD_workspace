@@ -131,12 +131,8 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/media/xplore/etienne_vol/Xplore/HD_workspace/build/gtest/cmake_install.cmake")
-  include("/media/xplore/etienne_vol/Xplore/HD_workspace/build/Inverse_kinematics_robotic_arm/testarm/HD15_IK/cmake_install.cmake")
+  include("/media/xplore/etienne_vol/Xplore/HD_workspace/build/xplore_msg/cmake_install.cmake")
   include("/media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/cmake_install.cmake")
-  include("/media/xplore/etienne_vol/Xplore/HD_workspace/build/Inverse_kinematics_robotic_arm/testarm/HD15/cmake_install.cmake")
-  include("/media/xplore/etienne_vol/Xplore/HD_workspace/build/Inverse_kinematics_robotic_arm/testarm/hd_ik_cmd/cmake_install.cmake")
-  include("/media/xplore/etienne_vol/Xplore/HD_workspace/build/Inverse_kinematics_robotic_arm/testarm/hd_ik_demo/cmake_install.cmake")
-  include("/media/xplore/etienne_vol/Xplore/HD_workspace/build/Inverse_kinematics_robotic_arm/testarm/hd_mp/cmake_install.cmake")
 
 endif()
 
