@@ -34,7 +34,7 @@ using namespace sensor_msgs;
 #define MOTOR_COUNT 7
 #define for_chain(it) for(size_t it=0; it<MOTOR_COUNT; ++it) 
 
-#define PRINT_STATE false
+#define PRINT_STATE true
 #define PRINT_MSGS false
 
 Epos4::control_mode_t control_mode;
@@ -47,7 +47,7 @@ double active[MOTOR_COUNT] = {0, 0, 0, 0, 0, 0, 0};
 
 static const int period = 10; // [ms]
 
-static const float step_size[MOTOR_COUNT] = {10.0*period, 10.0*period, 10.0*period, 10.0*period, 10.0*period, 10.0*period, 10.0*period};
+static const float step_size[MOTOR_COUNT] = {40.0*period, 40.0*period, 10.0*period, 10.0*period, 100.0*period, 100.0*period, 10.0*period};
 
 static const float max_rads[MOTOR_COUNT] = {2*M_PI, 2*M_PI, 2*M_PI, 2*M_PI, 2*M_PI, 2*M_PI, 2*M_PI};
 static const float min_rads[MOTOR_COUNT] = {0, 0, 0, 0, 0, 0, 0};
@@ -103,7 +103,7 @@ void inverse_kinematics_callback(const sensor_msgs::JointState::ConstPtr& msg){
 	* wheel_callback updates the values of the target_value array which contains the reference 
 	* individual wheel speeds expressed in RPMs
 	*/
-	for(size_t it=0; it<6; ++it) {0
+	for(size_t it=0; it<6; ++it) {
 		target_value[it] = msg->position[it];
 	}
 }
@@ -123,7 +123,7 @@ void correct_target_values() {
 
 int main(int argc, char **argv) {
 
-	ros::init(argc, argv, "controller_motors");
+	ros::init(argc, argv, "hd_controller_motors");
 	ros::NodeHandle n;
 
 
@@ -133,7 +133,7 @@ int main(int argc, char **argv) {
 	ros::Subscriber sub4 = n.subscribe<xplore_msg::HandlingControl>("cmd_hd", 10, incremental_step_position_generator_callback);
 	ros::Subscriber sub5 = n.subscribe<std_msgs::Float32>("manual_motor_position_generator", 10, manual_position_generator_callback);
 	ros::Subscriber sub6 = n.subscribe<xplore_msg::HandlingControl>("manual_increment_motor_position_generator", 10, manual_increment_position_generator_callback);
-	ros::Subscriber sub7 = n.subscribe<sensor_msgs::JointState>("put what u use", 10, inverse_kinematics_callback);
+	// ros::Subscriber sub7 = n.subscribe<sensor_msgs::JointState>("put what u use", 10, inverse_kinematics_callback);
 
 
 	cout << "ROS node initialized" << endl;
@@ -174,7 +174,6 @@ int main(int argc, char **argv) {
 
 		// correct_target_values();
 
-		if(!is_scanning) {
 			for(size_t it=0; it<MOTOR_COUNT; it++) {
 				target_value[it] += active[it] * step_size[it];
 			}
@@ -185,15 +184,17 @@ int main(int argc, char **argv) {
 
 					if (chain[it]->get_Device_State_In_String() == "Operation enable") {
 						if (control_mode == Epos4::position_CSP) {
-							chain[it]->set_Target_Position_In_Qc(target_value[it]);
 							if(PRINT_STATE) {
+								cout << "Motor " << it << "\n";
 								cout << "Desired position value = " << std::dec <<target_value[it] << " qc" << "\n";
+							}
+							if(!is_scanning) {
+								chain[it]->set_Target_Position_In_Qc(target_value[it]);
 							}
 						}
 					}
 				}
 			}
-		}
 
 		bool wkc = ethercat_master.next_Cycle(); // Function used to launch next cycle of the EtherCat net
 
@@ -201,6 +202,7 @@ int main(int argc, char **argv) {
 			for(size_t it=0; it<chain.size(); ++it) {
 				if(chain[it]->get_has_motor()) {
 					if(PRINT_STATE) {
+						cout << "Motor " << it << "\n";
 						cout << "State device : " << chain[it]->get_Device_State_In_String() << "\n";
 						cout << "Control mode = " << chain[it]->get_Control_Mode_In_String() << "\n";
 					}
@@ -209,7 +211,8 @@ int main(int argc, char **argv) {
 
 					if(is_scanning) {
 						target_value[it] = current_value[it];
-						is_scanning = false;
+						// is_scanning = false;
+						// return 0;
 					}
 
 					if(PRINT_STATE) {
