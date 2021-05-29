@@ -40,7 +40,7 @@ CATKIN_SKIP_TESTING:BOOL=OFF
 CATKIN_SYMLINK_INSTALL:BOOL=OFF
 
 //List of ';' separated packages to build
-CATKIN_WHITELIST_PACKAGES:STRING=hd_controller_motors;xplore_msg
+CATKIN_WHITELIST_PACKAGES:STRING=
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
@@ -308,12 +308,6 @@ catkin_DIR:PATH=/opt/ros/melodic/share/catkin/cmake
 //The directory containing a CMake configuration file for class_loader.
 class_loader_DIR:PATH=/opt/ros/melodic/share/class_loader/cmake
 
-//Value Computed by CMake
-controller_motors_BINARY_DIR:STATIC=/media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors
-
-//Value Computed by CMake
-controller_motors_SOURCE_DIR:STATIC=/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors
-
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/melodic/share/cpp_common/cmake
 
@@ -471,9 +465,6 @@ moveit_ros_warehouse_DIR:PATH=/opt/ros/melodic/share/moveit_ros_warehouse/cmake
 //The directory containing a CMake configuration file for moveit_visual_tools.
 moveit_visual_tools_DIR:PATH=/opt/ros/melodic/share/moveit_visual_tools/cmake
 
-//The directory containing a CMake configuration file for msg_runtime.
-msg_runtime_DIR:PATH=msg_runtime_DIR-NOTFOUND
-
 //The directory containing a CMake configuration file for object_recognition_msgs.
 object_recognition_msgs_DIR:PATH=/opt/ros/melodic/share/object_recognition_msgs/cmake
 
@@ -581,8 +572,6 @@ xmlrpcpp_DIR:PATH=/opt/ros/melodic/share/xmlrpcpp/cmake
 
 //Value Computed by CMake
 xplore_msg_BINARY_DIR:STATIC=/media/xplore/etienne_vol/Xplore/HD_workspace/build/xplore_msg
-
-xplore_msg_DIR:PATH=
 
 //Value Computed by CMake
 xplore_msg_SOURCE_DIR:STATIC=/media/xplore/etienne_vol/Xplore/HD_workspace/src/xplore_msg
@@ -697,7 +686,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

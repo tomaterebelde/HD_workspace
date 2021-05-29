@@ -138,7 +138,7 @@ int main(int argc, char **argv) {
 
 	cout << "ROS node initialized" << endl;
 
-	network_interface_name = "eth1";
+	network_interface_name = "eth2";
 	std::string input_target = "0";
 	for(size_t i=0; i<MOTOR_COUNT; i++) {
 		target_value[i] = atof(input_target.c_str());
@@ -148,7 +148,7 @@ int main(int argc, char **argv) {
 	}
 
 	control_mode = Epos4::position_CSP;
-    // control_mode = Epos4::profile_position_PPM;
+    //control_mode = Epos4::profile_position_PPM;
 
   	// Device definition
 	// 3-axis: 1st slot next to ETHERNET-IN
@@ -176,8 +176,13 @@ int main(int argc, char **argv) {
 
 			for(size_t it=0; it<MOTOR_COUNT; it++) {
 				target_value[it] += active[it] * step_size[it];
+				if(PRINT_STATE) {
+					cout << "active" << it << " : " << active[it] << " ";
+				}
 			}
-			
+			if(PRINT_STATE) {
+				cout << "\n";
+			}
 			for(size_t it=0; it<chain.size(); ++it) {
 				if(chain[it]->get_has_motor()) {
 					chain[it]->set_Control_Mode(control_mode);
@@ -211,7 +216,7 @@ int main(int argc, char **argv) {
 
 					if(is_scanning) {
 						target_value[it] = current_value[it];
-						// is_scanning = false;
+						is_scanning = false;
 						// return 0;
 					}
 

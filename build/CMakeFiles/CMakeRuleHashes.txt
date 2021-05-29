@@ -9,7 +9,6 @@ e3a851c1bf2e2391da5b1bb0346d70a8 /media/xplore/etienne_vol/Xplore/HD_workspace/d
 b123076fdcf3dd73d1ef1fed76376e0b /media/xplore/etienne_vol/Xplore/HD_workspace/devel/share/common-lisp/ros/xplore_msg/msg/HandlingControl.lisp
 b21b03b328e1261de34be8743857f473 /media/xplore/etienne_vol/Xplore/HD_workspace/devel/share/gennodejs/ros/hd_controller_motors/msg/HandlingControl.js
 e831a5403f6465853f03e0bc4a9861e3 /media/xplore/etienne_vol/Xplore/HD_workspace/devel/share/gennodejs/ros/xplore_msg/msg/HandlingControl.js
-e2bb580d8c98fe64601573b617e1f0f9 /media/xplore/etienne_vol/Xplore/HD_workspace/devel/share/roseus/ros/controller_motors/manifest.l
 d46e4c00d8a5d7a485c43247e4805ef2 /media/xplore/etienne_vol/Xplore/HD_workspace/devel/share/roseus/ros/hd_controller_motors/manifest.l
 89a1a4676ea5964931da247f49ed067d /media/xplore/etienne_vol/Xplore/HD_workspace/devel/share/roseus/ros/hd_controller_motors/msg/HandlingControl.l
 6f6474d5a0081ebbc55c6318682eddf4 /media/xplore/etienne_vol/Xplore/HD_workspace/devel/share/roseus/ros/xplore_msg/manifest.l
