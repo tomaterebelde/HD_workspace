@@ -47,12 +47,12 @@ double active[MOTOR_COUNT] = {0, 0, 0, 0, 0, 0, 0};
 
 static const int period = 10; // [ms]
 
-static const float step_size[MOTOR_COUNT] = {40.0*period, 40.0*period, 10.0*period, 10.0*period, 100.0*period, 100.0*period, 10.0*period};
+static const float step_size[MOTOR_COUNT] = {60.0*period, 40.0*period, 40.0*period, 60.0*period, 200.0*period, 200.0*period, 80.0*period};
 
 static const float max_rads[MOTOR_COUNT] = {2*M_PI, 2*M_PI, 2*M_PI, 2*M_PI, 2*M_PI, 2*M_PI, 2*M_PI};
 static const float min_rads[MOTOR_COUNT] = {0, 0, 0, 0, 0, 0, 0};
 
-bool is_scanning = true;
+bool is_scanning[MOTOR_COUNT] = {true, true, true, true, true, true, true};
 
 void manual_increment_position_generator_callback(const xplore_msg::HandlingControl::ConstPtr& msg) {
 	if(PRINT_MSGS)
@@ -138,7 +138,7 @@ int main(int argc, char **argv) {
 
 	cout << "ROS node initialized" << endl;
 
-	network_interface_name = "eth2";
+	network_interface_name = "eth1";
 	std::string input_target = "0";
 	for(size_t i=0; i<MOTOR_COUNT; i++) {
 		target_value[i] = atof(input_target.c_str());
@@ -193,7 +193,7 @@ int main(int argc, char **argv) {
 								cout << "Motor " << it << "\n";
 								cout << "Desired position value = " << std::dec <<target_value[it] << " qc" << "\n";
 							}
-							if(!is_scanning) {
+							if(!is_scanning[it]) {
 								chain[it]->set_Target_Position_In_Qc(target_value[it]);
 							}
 						}
@@ -214,9 +214,9 @@ int main(int argc, char **argv) {
 
 					current_value[it] = chain[it]->get_Actual_Position_In_Qc();
 
-					if(is_scanning) {
+					if(is_scanning[it]) {
 						target_value[it] = current_value[it];
-						is_scanning = false;
+						is_scanning[it] = false;
 						// return 0;
 					}
 
