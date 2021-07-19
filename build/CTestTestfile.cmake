@@ -5,5 +5,6 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
+subdirs("video_stream_opencv")
 subdirs("xplore_msg")
 subdirs("controller_motors")

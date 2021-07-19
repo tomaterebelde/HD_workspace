@@ -131,6 +131,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/media/xplore/etienne_vol/Xplore/HD_workspace/build/gtest/cmake_install.cmake")
+  include("/media/xplore/etienne_vol/Xplore/HD_workspace/build/video_stream_opencv/cmake_install.cmake")
   include("/media/xplore/etienne_vol/Xplore/HD_workspace/build/xplore_msg/cmake_install.cmake")
   include("/media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors/cmake_install.cmake")
 

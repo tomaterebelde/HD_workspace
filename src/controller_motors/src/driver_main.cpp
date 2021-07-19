@@ -127,12 +127,12 @@ int main(int argc, char **argv) {
 	ros::NodeHandle n;
 
 
-	ros::Subscriber sub1 = n.subscribe<std_msgs::Float32>("motor_position_generator", 10, position_generator_callback);
-	ros::Subscriber sub2 = n.subscribe<std_msgs::Float32>("incremental_motor_position_generator", 10, incremental_position_generator_callback);
-	ros::Subscriber sub3 = n.subscribe<xplore_msg::HandlingControl>("incremental_step_motor_position_generator", 10, incremental_step_position_generator_callback);
+	//ros::Subscriber sub1 = n.subscribe<std_msgs::Float32>("motor_position_generator", 10, position_generator_callback);
+	//ros::Subscriber sub2 = n.subscribe<std_msgs::Float32>("incremental_motor_position_generator", 10, incremental_position_generator_callback);
+	//ros::Subscriber sub3 = n.subscribe<xplore_msg::HandlingControl>("incremental_step_motor_position_generator", 10, incremental_step_position_generator_callback);
 	ros::Subscriber sub4 = n.subscribe<xplore_msg::HandlingControl>("cmd_hd", 10, incremental_step_position_generator_callback);
-	ros::Subscriber sub5 = n.subscribe<std_msgs::Float32>("manual_motor_position_generator", 10, manual_position_generator_callback);
-	ros::Subscriber sub6 = n.subscribe<xplore_msg::HandlingControl>("manual_increment_motor_position_generator", 10, manual_increment_position_generator_callback);
+	//ros::Subscriber sub5 = n.subscribe<std_msgs::Float32>("manual_motor_position_generator", 10, manual_position_generator_callback);
+	//ros::Subscriber sub6 = n.subscribe<xplore_msg::HandlingControl>("manual_increment_motor_position_generator", 10, manual_increment_position_generator_callback);
 	// ros::Subscriber sub7 = n.subscribe<sensor_msgs::JointState>("put what u use", 10, inverse_kinematics_callback);
 
 
@@ -192,6 +192,7 @@ int main(int argc, char **argv) {
 							if(PRINT_STATE) {
 								cout << "Motor " << it << "\n";
 								cout << "Desired position value = " << std::dec <<target_value[it] << " qc" << "\n";
+								
 							}
 							if(!is_scanning[it]) {
 								chain[it]->set_Target_Position_In_Qc(target_value[it]);
@@ -222,6 +223,7 @@ int main(int argc, char **argv) {
 
 					if(PRINT_STATE) {
 						cout << "Actual position : " << std::dec << current_value[it] << " qc" << "\n";
+						cout << "Actual current value = " << chain[it]->get_Actual_Current_In_A() << "A" << "\n";
 						cout << "\n";
 					}
 				}
