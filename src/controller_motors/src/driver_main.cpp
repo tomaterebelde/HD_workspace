@@ -36,6 +36,7 @@ using namespace sensor_msgs;
 
 #define PRINT_STATE true
 #define PRINT_MSGS false
+#define AFFICHAGE 1
 
 Epos4::control_mode_t control_mode;
 std::string network_interface_name;
@@ -208,9 +209,11 @@ int main(int argc, char **argv) {
 			for(size_t it=0; it<chain.size(); ++it) {
 				if(chain[it]->get_has_motor()) {
 					if(PRINT_STATE) {
+						if(it==AFFICHAGE) {
 						cout << "Motor " << it << "\n";
 						cout << "State device : " << chain[it]->get_Device_State_In_String() << "\n";
 						cout << "Control mode = " << chain[it]->get_Control_Mode_In_String() << "\n";
+					}
 					}
 
 					current_value[it] = chain[it]->get_Actual_Position_In_Qc();
@@ -222,9 +225,11 @@ int main(int argc, char **argv) {
 					}
 
 					if(PRINT_STATE) {
+						if(it==AFFICHAGE) {
 						cout << "Actual position : " << std::dec << current_value[it] << " qc" << "\n";
 						cout << "Actual current value = " << chain[it]->get_Actual_Current_In_A() << "A" << "\n";
 						cout << "\n";
+						}
 					}
 				}
 			}
