@@ -168,36 +168,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-controller_motors/CMakeFiles/manual_position_generator.dir/rule:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/manual_position_generator.dir/rule
-.PHONY : controller_motors/CMakeFiles/manual_position_generator.dir/rule
-
-# Convenience name for target.
-manual_position_generator: controller_motors/CMakeFiles/manual_position_generator.dir/rule
-
-.PHONY : manual_position_generator
-
-# fast build rule for target.
-manual_position_generator/fast:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/manual_position_generator.dir/build.make controller_motors/CMakeFiles/manual_position_generator.dir/build
-.PHONY : manual_position_generator/fast
-
-# Convenience name for target.
-controller_motors/CMakeFiles/incremental_position_generator.dir/rule:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/incremental_position_generator.dir/rule
-.PHONY : controller_motors/CMakeFiles/incremental_position_generator.dir/rule
-
-# Convenience name for target.
-incremental_position_generator: controller_motors/CMakeFiles/incremental_position_generator.dir/rule
-
-.PHONY : incremental_position_generator
-
-# fast build rule for target.
-incremental_position_generator/fast:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/incremental_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_position_generator.dir/build
-.PHONY : incremental_position_generator/fast
-
-# Convenience name for target.
 controller_motors/CMakeFiles/hd_controller_motors_genpy.dir/rule:
 	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/hd_controller_motors_genpy.dir/rule
 .PHONY : controller_motors/CMakeFiles/hd_controller_motors_genpy.dir/rule
@@ -258,21 +228,6 @@ hd_controller_motors_genlisp/fast:
 .PHONY : hd_controller_motors_genlisp/fast
 
 # Convenience name for target.
-controller_motors/CMakeFiles/position_generator.dir/rule:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/position_generator.dir/rule
-.PHONY : controller_motors/CMakeFiles/position_generator.dir/rule
-
-# Convenience name for target.
-position_generator: controller_motors/CMakeFiles/position_generator.dir/rule
-
-.PHONY : position_generator
-
-# fast build rule for target.
-position_generator/fast:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/position_generator.dir/build.make controller_motors/CMakeFiles/position_generator.dir/build
-.PHONY : position_generator/fast
-
-# Convenience name for target.
 controller_motors/CMakeFiles/hd_controller_motors_generate_messages_lisp.dir/rule:
 	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/hd_controller_motors_generate_messages_lisp.dir/rule
 .PHONY : controller_motors/CMakeFiles/hd_controller_motors_generate_messages_lisp.dir/rule
@@ -288,21 +243,6 @@ hd_controller_motors_generate_messages_lisp/fast:
 .PHONY : hd_controller_motors_generate_messages_lisp/fast
 
 # Convenience name for target.
-controller_motors/CMakeFiles/incremental_step_position_generator.dir/rule:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/incremental_step_position_generator.dir/rule
-.PHONY : controller_motors/CMakeFiles/incremental_step_position_generator.dir/rule
-
-# Convenience name for target.
-incremental_step_position_generator: controller_motors/CMakeFiles/incremental_step_position_generator.dir/rule
-
-.PHONY : incremental_step_position_generator
-
-# fast build rule for target.
-incremental_step_position_generator/fast:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/incremental_step_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_step_position_generator.dir/build
-.PHONY : incremental_step_position_generator/fast
-
-# Convenience name for target.
 controller_motors/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
 	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
 .PHONY : controller_motors/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
@@ -316,21 +256,6 @@ geometry_msgs_generate_messages_lisp: controller_motors/CMakeFiles/geometry_msgs
 geometry_msgs_generate_messages_lisp/fast:
 	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make controller_motors/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-controller_motors/CMakeFiles/manual_increment_position_generator.dir/rule:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/manual_increment_position_generator.dir/rule
-.PHONY : controller_motors/CMakeFiles/manual_increment_position_generator.dir/rule
-
-# Convenience name for target.
-manual_increment_position_generator: controller_motors/CMakeFiles/manual_increment_position_generator.dir/rule
-
-.PHONY : manual_increment_position_generator
-
-# fast build rule for target.
-manual_increment_position_generator/fast:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/manual_increment_position_generator.dir/build.make controller_motors/CMakeFiles/manual_increment_position_generator.dir/build
-.PHONY : manual_increment_position_generator/fast
 
 # Convenience name for target.
 controller_motors/CMakeFiles/hd_controller_motors_generate_messages_nodejs.dir/rule:
@@ -614,141 +539,6 @@ src/driver_main.cpp.s:
 	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/driver_main.dir/build.make controller_motors/CMakeFiles/driver_main.dir/src/driver_main.cpp.s
 .PHONY : src/driver_main.cpp.s
 
-src/incremental_position_generator.o: src/incremental_position_generator.cpp.o
-
-.PHONY : src/incremental_position_generator.o
-
-# target to build an object file
-src/incremental_position_generator.cpp.o:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/incremental_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_position_generator.dir/src/incremental_position_generator.cpp.o
-.PHONY : src/incremental_position_generator.cpp.o
-
-src/incremental_position_generator.i: src/incremental_position_generator.cpp.i
-
-.PHONY : src/incremental_position_generator.i
-
-# target to preprocess a source file
-src/incremental_position_generator.cpp.i:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/incremental_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_position_generator.dir/src/incremental_position_generator.cpp.i
-.PHONY : src/incremental_position_generator.cpp.i
-
-src/incremental_position_generator.s: src/incremental_position_generator.cpp.s
-
-.PHONY : src/incremental_position_generator.s
-
-# target to generate assembly for a file
-src/incremental_position_generator.cpp.s:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/incremental_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_position_generator.dir/src/incremental_position_generator.cpp.s
-.PHONY : src/incremental_position_generator.cpp.s
-
-src/incremental_step_position_generator.o: src/incremental_step_position_generator.cpp.o
-
-.PHONY : src/incremental_step_position_generator.o
-
-# target to build an object file
-src/incremental_step_position_generator.cpp.o:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/incremental_step_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_step_position_generator.dir/src/incremental_step_position_generator.cpp.o
-.PHONY : src/incremental_step_position_generator.cpp.o
-
-src/incremental_step_position_generator.i: src/incremental_step_position_generator.cpp.i
-
-.PHONY : src/incremental_step_position_generator.i
-
-# target to preprocess a source file
-src/incremental_step_position_generator.cpp.i:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/incremental_step_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_step_position_generator.dir/src/incremental_step_position_generator.cpp.i
-.PHONY : src/incremental_step_position_generator.cpp.i
-
-src/incremental_step_position_generator.s: src/incremental_step_position_generator.cpp.s
-
-.PHONY : src/incremental_step_position_generator.s
-
-# target to generate assembly for a file
-src/incremental_step_position_generator.cpp.s:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/incremental_step_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_step_position_generator.dir/src/incremental_step_position_generator.cpp.s
-.PHONY : src/incremental_step_position_generator.cpp.s
-
-src/manual_increment_position_generator.o: src/manual_increment_position_generator.cpp.o
-
-.PHONY : src/manual_increment_position_generator.o
-
-# target to build an object file
-src/manual_increment_position_generator.cpp.o:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/manual_increment_position_generator.dir/build.make controller_motors/CMakeFiles/manual_increment_position_generator.dir/src/manual_increment_position_generator.cpp.o
-.PHONY : src/manual_increment_position_generator.cpp.o
-
-src/manual_increment_position_generator.i: src/manual_increment_position_generator.cpp.i
-
-.PHONY : src/manual_increment_position_generator.i
-
-# target to preprocess a source file
-src/manual_increment_position_generator.cpp.i:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/manual_increment_position_generator.dir/build.make controller_motors/CMakeFiles/manual_increment_position_generator.dir/src/manual_increment_position_generator.cpp.i
-.PHONY : src/manual_increment_position_generator.cpp.i
-
-src/manual_increment_position_generator.s: src/manual_increment_position_generator.cpp.s
-
-.PHONY : src/manual_increment_position_generator.s
-
-# target to generate assembly for a file
-src/manual_increment_position_generator.cpp.s:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/manual_increment_position_generator.dir/build.make controller_motors/CMakeFiles/manual_increment_position_generator.dir/src/manual_increment_position_generator.cpp.s
-.PHONY : src/manual_increment_position_generator.cpp.s
-
-src/manual_position_generator.o: src/manual_position_generator.cpp.o
-
-.PHONY : src/manual_position_generator.o
-
-# target to build an object file
-src/manual_position_generator.cpp.o:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/manual_position_generator.dir/build.make controller_motors/CMakeFiles/manual_position_generator.dir/src/manual_position_generator.cpp.o
-.PHONY : src/manual_position_generator.cpp.o
-
-src/manual_position_generator.i: src/manual_position_generator.cpp.i
-
-.PHONY : src/manual_position_generator.i
-
-# target to preprocess a source file
-src/manual_position_generator.cpp.i:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/manual_position_generator.dir/build.make controller_motors/CMakeFiles/manual_position_generator.dir/src/manual_position_generator.cpp.i
-.PHONY : src/manual_position_generator.cpp.i
-
-src/manual_position_generator.s: src/manual_position_generator.cpp.s
-
-.PHONY : src/manual_position_generator.s
-
-# target to generate assembly for a file
-src/manual_position_generator.cpp.s:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/manual_position_generator.dir/build.make controller_motors/CMakeFiles/manual_position_generator.dir/src/manual_position_generator.cpp.s
-.PHONY : src/manual_position_generator.cpp.s
-
-src/position_generator.o: src/position_generator.cpp.o
-
-.PHONY : src/position_generator.o
-
-# target to build an object file
-src/position_generator.cpp.o:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/position_generator.dir/build.make controller_motors/CMakeFiles/position_generator.dir/src/position_generator.cpp.o
-.PHONY : src/position_generator.cpp.o
-
-src/position_generator.i: src/position_generator.cpp.i
-
-.PHONY : src/position_generator.i
-
-# target to preprocess a source file
-src/position_generator.cpp.i:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/position_generator.dir/build.make controller_motors/CMakeFiles/position_generator.dir/src/position_generator.cpp.i
-.PHONY : src/position_generator.cpp.i
-
-src/position_generator.s: src/position_generator.cpp.s
-
-.PHONY : src/position_generator.s
-
-# target to generate assembly for a file
-src/position_generator.cpp.s:
-	cd /media/xplore/etienne_vol/Xplore/HD_workspace/build && $(MAKE) -f controller_motors/CMakeFiles/position_generator.dir/build.make controller_motors/CMakeFiles/position_generator.dir/src/position_generator.cpp.s
-.PHONY : src/position_generator.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -757,18 +547,13 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install"
-	@echo "... manual_position_generator"
-	@echo "... incremental_position_generator"
 	@echo "... hd_controller_motors_genpy"
 	@echo "... hd_controller_motors_generate_messages_py"
 	@echo "... hd_controller_motors_gennodejs"
 	@echo "... hd_controller_motors_genlisp"
-	@echo "... position_generator"
 	@echo "... hd_controller_motors_generate_messages_lisp"
 	@echo "... test"
-	@echo "... incremental_step_position_generator"
 	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... manual_increment_position_generator"
 	@echo "... hd_controller_motors_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... rebuild_cache"
@@ -793,21 +578,6 @@ help:
 	@echo "... src/driver_main.o"
 	@echo "... src/driver_main.i"
 	@echo "... src/driver_main.s"
-	@echo "... src/incremental_position_generator.o"
-	@echo "... src/incremental_position_generator.i"
-	@echo "... src/incremental_position_generator.s"
-	@echo "... src/incremental_step_position_generator.o"
-	@echo "... src/incremental_step_position_generator.i"
-	@echo "... src/incremental_step_position_generator.s"
-	@echo "... src/manual_increment_position_generator.o"
-	@echo "... src/manual_increment_position_generator.i"
-	@echo "... src/manual_increment_position_generator.s"
-	@echo "... src/manual_position_generator.o"
-	@echo "... src/manual_position_generator.i"
-	@echo "... src/manual_position_generator.s"
-	@echo "... src/position_generator.o"
-	@echo "... src/position_generator.i"
-	@echo "... src/position_generator.s"
 .PHONY : help
 
 

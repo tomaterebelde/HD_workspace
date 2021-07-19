@@ -1,8 +1,0 @@
-prefix=/media/xplore/etienne_vol/Xplore/HD_workspace/devel
-
-Name: hd_mp
-Description: Description of hd_mp
-Version: 0.3.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: roscpp moveit_ros_planning moveit_ros_planning_interface moveit_core geometry_msgs

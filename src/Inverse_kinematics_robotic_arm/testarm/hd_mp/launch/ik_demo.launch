@@ -1,3 +1,0 @@
-<launch>
-  <include file="$(find HD15_IK)/launch/demo.launch"/>
-</launch>

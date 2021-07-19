@@ -488,7 +488,7 @@ xplore_msg/CMakeFiles/xplore_msg_generate_messages_py.dir/all: xplore_msg/CMakeF
 xplore_msg/CMakeFiles/xplore_msg_generate_messages_py.dir/all: xplore_msg/CMakeFiles/std_msgs_generate_messages_py.dir/all
 	$(MAKE) -f xplore_msg/CMakeFiles/xplore_msg_generate_messages_py.dir/build.make xplore_msg/CMakeFiles/xplore_msg_generate_messages_py.dir/depend
 	$(MAKE) -f xplore_msg/CMakeFiles/xplore_msg_generate_messages_py.dir/build.make xplore_msg/CMakeFiles/xplore_msg_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=36,37 "Built target xplore_msg_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=26,27 "Built target xplore_msg_generate_messages_py"
 .PHONY : xplore_msg/CMakeFiles/xplore_msg_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -553,7 +553,7 @@ xplore_msg/CMakeFiles/xplore_msg_generate_messages_lisp.dir/all: xplore_msg/CMak
 xplore_msg/CMakeFiles/xplore_msg_generate_messages_lisp.dir/all: xplore_msg/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f xplore_msg/CMakeFiles/xplore_msg_generate_messages_lisp.dir/build.make xplore_msg/CMakeFiles/xplore_msg_generate_messages_lisp.dir/depend
 	$(MAKE) -f xplore_msg/CMakeFiles/xplore_msg_generate_messages_lisp.dir/build.make xplore_msg/CMakeFiles/xplore_msg_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=34 "Built target xplore_msg_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=24 "Built target xplore_msg_generate_messages_lisp"
 .PHONY : xplore_msg/CMakeFiles/xplore_msg_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -650,7 +650,7 @@ xplore_msg/CMakeFiles/xplore_msg_generate_messages_cpp.dir/all: xplore_msg/CMake
 xplore_msg/CMakeFiles/xplore_msg_generate_messages_cpp.dir/all: xplore_msg/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 	$(MAKE) -f xplore_msg/CMakeFiles/xplore_msg_generate_messages_cpp.dir/build.make xplore_msg/CMakeFiles/xplore_msg_generate_messages_cpp.dir/depend
 	$(MAKE) -f xplore_msg/CMakeFiles/xplore_msg_generate_messages_cpp.dir/build.make xplore_msg/CMakeFiles/xplore_msg_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=31 "Built target xplore_msg_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=21 "Built target xplore_msg_generate_messages_cpp"
 .PHONY : xplore_msg/CMakeFiles/xplore_msg_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -843,7 +843,7 @@ xplore_msg/CMakeFiles/xplore_msg_generate_messages_eus.dir/all: xplore_msg/CMake
 xplore_msg/CMakeFiles/xplore_msg_generate_messages_eus.dir/all: xplore_msg/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f xplore_msg/CMakeFiles/xplore_msg_generate_messages_eus.dir/build.make xplore_msg/CMakeFiles/xplore_msg_generate_messages_eus.dir/depend
 	$(MAKE) -f xplore_msg/CMakeFiles/xplore_msg_generate_messages_eus.dir/build.make xplore_msg/CMakeFiles/xplore_msg_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=32,33 "Built target xplore_msg_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=22,23 "Built target xplore_msg_generate_messages_eus"
 .PHONY : xplore_msg/CMakeFiles/xplore_msg_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1077,7 +1077,7 @@ xplore_msg/CMakeFiles/xplore_msg_generate_messages_nodejs.dir/all: xplore_msg/CM
 xplore_msg/CMakeFiles/xplore_msg_generate_messages_nodejs.dir/all: xplore_msg/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f xplore_msg/CMakeFiles/xplore_msg_generate_messages_nodejs.dir/build.make xplore_msg/CMakeFiles/xplore_msg_generate_messages_nodejs.dir/depend
 	$(MAKE) -f xplore_msg/CMakeFiles/xplore_msg_generate_messages_nodejs.dir/build.make xplore_msg/CMakeFiles/xplore_msg_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=35 "Built target xplore_msg_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=25 "Built target xplore_msg_generate_messages_nodejs"
 .PHONY : xplore_msg/CMakeFiles/xplore_msg_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1330,28 +1330,18 @@ clean: xplore_msg/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 # Directory level rules for directory controller_motors
 
 # Convenience name for "all" pass in the directory.
-controller_motors/all: controller_motors/CMakeFiles/manual_position_generator.dir/all
-controller_motors/all: controller_motors/CMakeFiles/incremental_position_generator.dir/all
-controller_motors/all: controller_motors/CMakeFiles/position_generator.dir/all
-controller_motors/all: controller_motors/CMakeFiles/incremental_step_position_generator.dir/all
-controller_motors/all: controller_motors/CMakeFiles/manual_increment_position_generator.dir/all
 controller_motors/all: controller_motors/CMakeFiles/driver_main.dir/all
 controller_motors/all: controller_motors/CMakeFiles/hd_controller_motors_generate_messages.dir/all
 
 .PHONY : controller_motors/all
 
 # Convenience name for "clean" pass in the directory.
-controller_motors/clean: controller_motors/CMakeFiles/manual_position_generator.dir/clean
-controller_motors/clean: controller_motors/CMakeFiles/incremental_position_generator.dir/clean
 controller_motors/clean: controller_motors/CMakeFiles/hd_controller_motors_genpy.dir/clean
 controller_motors/clean: controller_motors/CMakeFiles/hd_controller_motors_generate_messages_py.dir/clean
 controller_motors/clean: controller_motors/CMakeFiles/hd_controller_motors_gennodejs.dir/clean
 controller_motors/clean: controller_motors/CMakeFiles/hd_controller_motors_genlisp.dir/clean
-controller_motors/clean: controller_motors/CMakeFiles/position_generator.dir/clean
 controller_motors/clean: controller_motors/CMakeFiles/hd_controller_motors_generate_messages_lisp.dir/clean
-controller_motors/clean: controller_motors/CMakeFiles/incremental_step_position_generator.dir/clean
 controller_motors/clean: controller_motors/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
-controller_motors/clean: controller_motors/CMakeFiles/manual_increment_position_generator.dir/clean
 controller_motors/clean: controller_motors/CMakeFiles/hd_controller_motors_generate_messages_nodejs.dir/clean
 controller_motors/clean: controller_motors/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
 controller_motors/clean: controller_motors/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
@@ -1376,80 +1366,6 @@ controller_motors/clean: controller_motors/CMakeFiles/hd_controller_motors_gencp
 controller_motors/preinstall:
 
 .PHONY : controller_motors/preinstall
-
-#=============================================================================
-# Target rules for target controller_motors/CMakeFiles/manual_position_generator.dir
-
-# All Build rule for target.
-controller_motors/CMakeFiles/manual_position_generator.dir/all:
-	$(MAKE) -f controller_motors/CMakeFiles/manual_position_generator.dir/build.make controller_motors/CMakeFiles/manual_position_generator.dir/depend
-	$(MAKE) -f controller_motors/CMakeFiles/manual_position_generator.dir/build.make controller_motors/CMakeFiles/manual_position_generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=27,28 "Built target manual_position_generator"
-.PHONY : controller_motors/CMakeFiles/manual_position_generator.dir/all
-
-# Include target in all.
-all: controller_motors/CMakeFiles/manual_position_generator.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-controller_motors/CMakeFiles/manual_position_generator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/manual_position_generator.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles 0
-.PHONY : controller_motors/CMakeFiles/manual_position_generator.dir/rule
-
-# Convenience name for target.
-manual_position_generator: controller_motors/CMakeFiles/manual_position_generator.dir/rule
-
-.PHONY : manual_position_generator
-
-# clean rule for target.
-controller_motors/CMakeFiles/manual_position_generator.dir/clean:
-	$(MAKE) -f controller_motors/CMakeFiles/manual_position_generator.dir/build.make controller_motors/CMakeFiles/manual_position_generator.dir/clean
-.PHONY : controller_motors/CMakeFiles/manual_position_generator.dir/clean
-
-# clean rule for target.
-clean: controller_motors/CMakeFiles/manual_position_generator.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target controller_motors/CMakeFiles/incremental_position_generator.dir
-
-# All Build rule for target.
-controller_motors/CMakeFiles/incremental_position_generator.dir/all:
-	$(MAKE) -f controller_motors/CMakeFiles/incremental_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_position_generator.dir/depend
-	$(MAKE) -f controller_motors/CMakeFiles/incremental_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_position_generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=21,22 "Built target incremental_position_generator"
-.PHONY : controller_motors/CMakeFiles/incremental_position_generator.dir/all
-
-# Include target in all.
-all: controller_motors/CMakeFiles/incremental_position_generator.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-controller_motors/CMakeFiles/incremental_position_generator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/incremental_position_generator.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles 0
-.PHONY : controller_motors/CMakeFiles/incremental_position_generator.dir/rule
-
-# Convenience name for target.
-incremental_position_generator: controller_motors/CMakeFiles/incremental_position_generator.dir/rule
-
-.PHONY : incremental_position_generator
-
-# clean rule for target.
-controller_motors/CMakeFiles/incremental_position_generator.dir/clean:
-	$(MAKE) -f controller_motors/CMakeFiles/incremental_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_position_generator.dir/clean
-.PHONY : controller_motors/CMakeFiles/incremental_position_generator.dir/clean
-
-# clean rule for target.
-clean: controller_motors/CMakeFiles/incremental_position_generator.dir/clean
-
-.PHONY : clean
 
 #=============================================================================
 # Target rules for target controller_motors/CMakeFiles/hd_controller_motors_genpy.dir
@@ -1581,43 +1497,6 @@ clean: controller_motors/CMakeFiles/hd_controller_motors_genlisp.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target controller_motors/CMakeFiles/position_generator.dir
-
-# All Build rule for target.
-controller_motors/CMakeFiles/position_generator.dir/all:
-	$(MAKE) -f controller_motors/CMakeFiles/position_generator.dir/build.make controller_motors/CMakeFiles/position_generator.dir/depend
-	$(MAKE) -f controller_motors/CMakeFiles/position_generator.dir/build.make controller_motors/CMakeFiles/position_generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=29,30 "Built target position_generator"
-.PHONY : controller_motors/CMakeFiles/position_generator.dir/all
-
-# Include target in all.
-all: controller_motors/CMakeFiles/position_generator.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-controller_motors/CMakeFiles/position_generator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/position_generator.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles 0
-.PHONY : controller_motors/CMakeFiles/position_generator.dir/rule
-
-# Convenience name for target.
-position_generator: controller_motors/CMakeFiles/position_generator.dir/rule
-
-.PHONY : position_generator
-
-# clean rule for target.
-controller_motors/CMakeFiles/position_generator.dir/clean:
-	$(MAKE) -f controller_motors/CMakeFiles/position_generator.dir/build.make controller_motors/CMakeFiles/position_generator.dir/clean
-.PHONY : controller_motors/CMakeFiles/position_generator.dir/clean
-
-# clean rule for target.
-clean: controller_motors/CMakeFiles/position_generator.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target controller_motors/CMakeFiles/hd_controller_motors_generate_messages_lisp.dir
 
 # All Build rule for target.
@@ -1651,43 +1530,6 @@ clean: controller_motors/CMakeFiles/hd_controller_motors_generate_messages_lisp.
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target controller_motors/CMakeFiles/incremental_step_position_generator.dir
-
-# All Build rule for target.
-controller_motors/CMakeFiles/incremental_step_position_generator.dir/all:
-	$(MAKE) -f controller_motors/CMakeFiles/incremental_step_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_step_position_generator.dir/depend
-	$(MAKE) -f controller_motors/CMakeFiles/incremental_step_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_step_position_generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=23,24 "Built target incremental_step_position_generator"
-.PHONY : controller_motors/CMakeFiles/incremental_step_position_generator.dir/all
-
-# Include target in all.
-all: controller_motors/CMakeFiles/incremental_step_position_generator.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-controller_motors/CMakeFiles/incremental_step_position_generator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/incremental_step_position_generator.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles 0
-.PHONY : controller_motors/CMakeFiles/incremental_step_position_generator.dir/rule
-
-# Convenience name for target.
-incremental_step_position_generator: controller_motors/CMakeFiles/incremental_step_position_generator.dir/rule
-
-.PHONY : incremental_step_position_generator
-
-# clean rule for target.
-controller_motors/CMakeFiles/incremental_step_position_generator.dir/clean:
-	$(MAKE) -f controller_motors/CMakeFiles/incremental_step_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_step_position_generator.dir/clean
-.PHONY : controller_motors/CMakeFiles/incremental_step_position_generator.dir/clean
-
-# clean rule for target.
-clean: controller_motors/CMakeFiles/incremental_step_position_generator.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target controller_motors/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
 
 # All Build rule for target.
@@ -1716,43 +1558,6 @@ controller_motors/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean:
 
 # clean rule for target.
 clean: controller_motors/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target controller_motors/CMakeFiles/manual_increment_position_generator.dir
-
-# All Build rule for target.
-controller_motors/CMakeFiles/manual_increment_position_generator.dir/all:
-	$(MAKE) -f controller_motors/CMakeFiles/manual_increment_position_generator.dir/build.make controller_motors/CMakeFiles/manual_increment_position_generator.dir/depend
-	$(MAKE) -f controller_motors/CMakeFiles/manual_increment_position_generator.dir/build.make controller_motors/CMakeFiles/manual_increment_position_generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles --progress-num=25,26 "Built target manual_increment_position_generator"
-.PHONY : controller_motors/CMakeFiles/manual_increment_position_generator.dir/all
-
-# Include target in all.
-all: controller_motors/CMakeFiles/manual_increment_position_generator.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-controller_motors/CMakeFiles/manual_increment_position_generator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 controller_motors/CMakeFiles/manual_increment_position_generator.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/xplore/etienne_vol/Xplore/HD_workspace/build/CMakeFiles 0
-.PHONY : controller_motors/CMakeFiles/manual_increment_position_generator.dir/rule
-
-# Convenience name for target.
-manual_increment_position_generator: controller_motors/CMakeFiles/manual_increment_position_generator.dir/rule
-
-.PHONY : manual_increment_position_generator
-
-# clean rule for target.
-controller_motors/CMakeFiles/manual_increment_position_generator.dir/clean:
-	$(MAKE) -f controller_motors/CMakeFiles/manual_increment_position_generator.dir/build.make controller_motors/CMakeFiles/manual_increment_position_generator.dir/clean
-.PHONY : controller_motors/CMakeFiles/manual_increment_position_generator.dir/clean
-
-# clean rule for target.
-clean: controller_motors/CMakeFiles/manual_increment_position_generator.dir/clean
 
 .PHONY : clean
 

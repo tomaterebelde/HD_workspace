@@ -636,32 +636,6 @@ std_msgs_generate_messages_py/fast:
 .PHONY : std_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named manual_position_generator
-
-# Build rule for target.
-manual_position_generator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 manual_position_generator
-.PHONY : manual_position_generator
-
-# fast build rule for target.
-manual_position_generator/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/manual_position_generator.dir/build.make controller_motors/CMakeFiles/manual_position_generator.dir/build
-.PHONY : manual_position_generator/fast
-
-#=============================================================================
-# Target rules for targets named incremental_position_generator
-
-# Build rule for target.
-incremental_position_generator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 incremental_position_generator
-.PHONY : incremental_position_generator
-
-# fast build rule for target.
-incremental_position_generator/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/incremental_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_position_generator.dir/build
-.PHONY : incremental_position_generator/fast
-
-#=============================================================================
 # Target rules for targets named hd_controller_motors_genpy
 
 # Build rule for target.
@@ -714,19 +688,6 @@ hd_controller_motors_genlisp/fast:
 .PHONY : hd_controller_motors_genlisp/fast
 
 #=============================================================================
-# Target rules for targets named position_generator
-
-# Build rule for target.
-position_generator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 position_generator
-.PHONY : position_generator
-
-# fast build rule for target.
-position_generator/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/position_generator.dir/build.make controller_motors/CMakeFiles/position_generator.dir/build
-.PHONY : position_generator/fast
-
-#=============================================================================
 # Target rules for targets named hd_controller_motors_generate_messages_lisp
 
 # Build rule for target.
@@ -740,19 +701,6 @@ hd_controller_motors_generate_messages_lisp/fast:
 .PHONY : hd_controller_motors_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named incremental_step_position_generator
-
-# Build rule for target.
-incremental_step_position_generator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 incremental_step_position_generator
-.PHONY : incremental_step_position_generator
-
-# fast build rule for target.
-incremental_step_position_generator/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/incremental_step_position_generator.dir/build.make controller_motors/CMakeFiles/incremental_step_position_generator.dir/build
-.PHONY : incremental_step_position_generator/fast
-
-#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -764,19 +712,6 @@ geometry_msgs_generate_messages_lisp: cmake_check_build_system
 geometry_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f controller_motors/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make controller_motors/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named manual_increment_position_generator
-
-# Build rule for target.
-manual_increment_position_generator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 manual_increment_position_generator
-.PHONY : manual_increment_position_generator
-
-# fast build rule for target.
-manual_increment_position_generator/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/manual_increment_position_generator.dir/build.make controller_motors/CMakeFiles/manual_increment_position_generator.dir/build
-.PHONY : manual_increment_position_generator/fast
 
 #=============================================================================
 # Target rules for targets named hd_controller_motors_generate_messages_nodejs
@@ -1048,17 +983,12 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
-	@echo "... manual_position_generator"
-	@echo "... incremental_position_generator"
 	@echo "... hd_controller_motors_genpy"
 	@echo "... hd_controller_motors_generate_messages_py"
 	@echo "... hd_controller_motors_gennodejs"
 	@echo "... hd_controller_motors_genlisp"
-	@echo "... position_generator"
 	@echo "... hd_controller_motors_generate_messages_lisp"
-	@echo "... incremental_step_position_generator"
 	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... manual_increment_position_generator"
 	@echo "... hd_controller_motors_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_lisp"

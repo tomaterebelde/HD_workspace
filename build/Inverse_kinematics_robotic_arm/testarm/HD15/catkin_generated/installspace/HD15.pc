@@ -1,8 +1,0 @@
-prefix=/media/xplore/etienne_vol/Xplore/HD_workspace/install
-
-Name: HD15
-Description: Description of HD15
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
