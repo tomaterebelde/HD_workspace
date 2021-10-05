@@ -7,4 +7,4 @@
 subdirs("gtest")
 subdirs("video_stream_opencv")
 subdirs("xplore_msg")
-subdirs("controller_motors")
+subdirs("hd_controller_motors")

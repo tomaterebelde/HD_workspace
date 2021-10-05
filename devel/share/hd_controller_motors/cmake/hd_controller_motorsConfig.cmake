@@ -67,7 +67,7 @@ set(hd_controller_motors_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(hd_controller_motors_SOURCE_PREFIX /media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors)
+  set(hd_controller_motors_SOURCE_PREFIX /media/xplore/etienne_vol/Xplore/HD_workspace/src/hd_controller_motors)
   set(hd_controller_motors_DEVEL_PREFIX /media/xplore/etienne_vol/Xplore/HD_workspace/devel)
   set(hd_controller_motors_INSTALL_PREFIX "")
   set(hd_controller_motors_PREFIX ${hd_controller_motors_DEVEL_PREFIX})
@@ -110,7 +110,7 @@ if(NOT "/media/xplore/etienne_vol/Xplore/HD_workspace/devel/include " STREQUAL "
         message(FATAL_ERROR "Project 'hd_controller_motors' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'hd_controller_motors' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'hd_controller_motors' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/media/xplore/etienne_vol/Xplore/HD_workspace/src/hd_controller_motors/${idir}'.  ${_report}")
     endif()
     _list_append_unique(hd_controller_motors_INCLUDE_DIRS ${include})
   endforeach()

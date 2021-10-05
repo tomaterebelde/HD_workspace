@@ -388,10 +388,10 @@ gtest_hide_internal_symbols:BOOL=OFF
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
 //Value Computed by CMake
-hd_controller_motors_BINARY_DIR:STATIC=/media/xplore/etienne_vol/Xplore/HD_workspace/build/controller_motors
+hd_controller_motors_BINARY_DIR:STATIC=/media/xplore/etienne_vol/Xplore/HD_workspace/build/hd_controller_motors
 
 //Value Computed by CMake
-hd_controller_motors_SOURCE_DIR:STATIC=/media/xplore/etienne_vol/Xplore/HD_workspace/src/controller_motors
+hd_controller_motors_SOURCE_DIR:STATIC=/media/xplore/etienne_vol/Xplore/HD_workspace/src/hd_controller_motors
 
 //The directory containing a CMake configuration file for image_transport.
 image_transport_DIR:PATH=/opt/ros/melodic/share/image_transport/cmake

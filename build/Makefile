@@ -1165,7 +1165,7 @@ hd_controller_motors_geneus: cmake_check_build_system
 
 # fast build rule for target.
 hd_controller_motors_geneus/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_geneus.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_geneus.dir/build
+	$(MAKE) -f hd_controller_motors/CMakeFiles/hd_controller_motors_geneus.dir/build.make hd_controller_motors/CMakeFiles/hd_controller_motors_geneus.dir/build
 .PHONY : hd_controller_motors_geneus/fast
 
 #=============================================================================
@@ -1178,7 +1178,7 @@ _hd_controller_motors_generate_messages_check_deps_HandlingControl: cmake_check_
 
 # fast build rule for target.
 _hd_controller_motors_generate_messages_check_deps_HandlingControl/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/_hd_controller_motors_generate_messages_check_deps_HandlingControl.dir/build.make controller_motors/CMakeFiles/_hd_controller_motors_generate_messages_check_deps_HandlingControl.dir/build
+	$(MAKE) -f hd_controller_motors/CMakeFiles/_hd_controller_motors_generate_messages_check_deps_HandlingControl.dir/build.make hd_controller_motors/CMakeFiles/_hd_controller_motors_generate_messages_check_deps_HandlingControl.dir/build
 .PHONY : _hd_controller_motors_generate_messages_check_deps_HandlingControl/fast
 
 #=============================================================================
@@ -1191,7 +1191,7 @@ hd_controller_motors_genpy: cmake_check_build_system
 
 # fast build rule for target.
 hd_controller_motors_genpy/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_genpy.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_genpy.dir/build
+	$(MAKE) -f hd_controller_motors/CMakeFiles/hd_controller_motors_genpy.dir/build.make hd_controller_motors/CMakeFiles/hd_controller_motors_genpy.dir/build
 .PHONY : hd_controller_motors_genpy/fast
 
 #=============================================================================
@@ -1204,7 +1204,7 @@ hd_controller_motors_gencpp: cmake_check_build_system
 
 # fast build rule for target.
 hd_controller_motors_gencpp/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_gencpp.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_gencpp.dir/build
+	$(MAKE) -f hd_controller_motors/CMakeFiles/hd_controller_motors_gencpp.dir/build.make hd_controller_motors/CMakeFiles/hd_controller_motors_gencpp.dir/build
 .PHONY : hd_controller_motors_gencpp/fast
 
 #=============================================================================
@@ -1217,7 +1217,7 @@ hd_controller_motors_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 hd_controller_motors_generate_messages_cpp/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_generate_messages_cpp.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_generate_messages_cpp.dir/build
+	$(MAKE) -f hd_controller_motors/CMakeFiles/hd_controller_motors_generate_messages_cpp.dir/build.make hd_controller_motors/CMakeFiles/hd_controller_motors_generate_messages_cpp.dir/build
 .PHONY : hd_controller_motors_generate_messages_cpp/fast
 
 #=============================================================================
@@ -1230,21 +1230,8 @@ hd_controller_motors_generate_messages: cmake_check_build_system
 
 # fast build rule for target.
 hd_controller_motors_generate_messages/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_generate_messages.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_generate_messages.dir/build
+	$(MAKE) -f hd_controller_motors/CMakeFiles/hd_controller_motors_generate_messages.dir/build.make hd_controller_motors/CMakeFiles/hd_controller_motors_generate_messages.dir/build
 .PHONY : hd_controller_motors_generate_messages/fast
-
-#=============================================================================
-# Target rules for targets named driver_main
-
-# Build rule for target.
-driver_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 driver_main
-.PHONY : driver_main
-
-# fast build rule for target.
-driver_main/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/driver_main.dir/build.make controller_motors/CMakeFiles/driver_main.dir/build
-.PHONY : driver_main/fast
 
 #=============================================================================
 # Target rules for targets named hd_controller_motors_generate_messages_eus
@@ -1256,7 +1243,7 @@ hd_controller_motors_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 hd_controller_motors_generate_messages_eus/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_generate_messages_eus.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_generate_messages_eus.dir/build
+	$(MAKE) -f hd_controller_motors/CMakeFiles/hd_controller_motors_generate_messages_eus.dir/build.make hd_controller_motors/CMakeFiles/hd_controller_motors_generate_messages_eus.dir/build
 .PHONY : hd_controller_motors_generate_messages_eus/fast
 
 #=============================================================================
@@ -1269,7 +1256,7 @@ hd_controller_motors_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 hd_controller_motors_generate_messages_lisp/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_generate_messages_lisp.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_generate_messages_lisp.dir/build
+	$(MAKE) -f hd_controller_motors/CMakeFiles/hd_controller_motors_generate_messages_lisp.dir/build.make hd_controller_motors/CMakeFiles/hd_controller_motors_generate_messages_lisp.dir/build
 .PHONY : hd_controller_motors_generate_messages_lisp/fast
 
 #=============================================================================
@@ -1282,7 +1269,7 @@ hd_controller_motors_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 hd_controller_motors_generate_messages_py/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_generate_messages_py.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_generate_messages_py.dir/build
+	$(MAKE) -f hd_controller_motors/CMakeFiles/hd_controller_motors_generate_messages_py.dir/build.make hd_controller_motors/CMakeFiles/hd_controller_motors_generate_messages_py.dir/build
 .PHONY : hd_controller_motors_generate_messages_py/fast
 
 #=============================================================================
@@ -1295,8 +1282,21 @@ hd_controller_motors_genlisp: cmake_check_build_system
 
 # fast build rule for target.
 hd_controller_motors_genlisp/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_genlisp.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_genlisp.dir/build
+	$(MAKE) -f hd_controller_motors/CMakeFiles/hd_controller_motors_genlisp.dir/build.make hd_controller_motors/CMakeFiles/hd_controller_motors_genlisp.dir/build
 .PHONY : hd_controller_motors_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named hd_node
+
+# Build rule for target.
+hd_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hd_node
+.PHONY : hd_node
+
+# fast build rule for target.
+hd_node/fast:
+	$(MAKE) -f hd_controller_motors/CMakeFiles/hd_node.dir/build.make hd_controller_motors/CMakeFiles/hd_node.dir/build
+.PHONY : hd_node/fast
 
 #=============================================================================
 # Target rules for targets named hd_controller_motors_generate_messages_nodejs
@@ -1308,8 +1308,21 @@ hd_controller_motors_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 hd_controller_motors_generate_messages_nodejs/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_generate_messages_nodejs.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_generate_messages_nodejs.dir/build
+	$(MAKE) -f hd_controller_motors/CMakeFiles/hd_controller_motors_generate_messages_nodejs.dir/build.make hd_controller_motors/CMakeFiles/hd_controller_motors_generate_messages_nodejs.dir/build
 .PHONY : hd_controller_motors_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named hd_motors_driver
+
+# Build rule for target.
+hd_motors_driver: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hd_motors_driver
+.PHONY : hd_motors_driver
+
+# fast build rule for target.
+hd_motors_driver/fast:
+	$(MAKE) -f hd_controller_motors/CMakeFiles/hd_motors_driver.dir/build.make hd_controller_motors/CMakeFiles/hd_motors_driver.dir/build
+.PHONY : hd_motors_driver/fast
 
 #=============================================================================
 # Target rules for targets named hd_controller_motors_gennodejs
@@ -1321,7 +1334,7 @@ hd_controller_motors_gennodejs: cmake_check_build_system
 
 # fast build rule for target.
 hd_controller_motors_gennodejs/fast:
-	$(MAKE) -f controller_motors/CMakeFiles/hd_controller_motors_gennodejs.dir/build.make controller_motors/CMakeFiles/hd_controller_motors_gennodejs.dir/build
+	$(MAKE) -f hd_controller_motors/CMakeFiles/hd_controller_motors_gennodejs.dir/build.make hd_controller_motors/CMakeFiles/hd_controller_motors_gennodejs.dir/build
 .PHONY : hd_controller_motors_gennodejs/fast
 
 # Help Target
@@ -1419,12 +1432,13 @@ help:
 	@echo "... hd_controller_motors_gencpp"
 	@echo "... hd_controller_motors_generate_messages_cpp"
 	@echo "... hd_controller_motors_generate_messages"
-	@echo "... driver_main"
 	@echo "... hd_controller_motors_generate_messages_eus"
 	@echo "... hd_controller_motors_generate_messages_lisp"
 	@echo "... hd_controller_motors_generate_messages_py"
 	@echo "... hd_controller_motors_genlisp"
+	@echo "... hd_node"
 	@echo "... hd_controller_motors_generate_messages_nodejs"
+	@echo "... hd_motors_driver"
 	@echo "... hd_controller_motors_gennodejs"
 .PHONY : help
 
